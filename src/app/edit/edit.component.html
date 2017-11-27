@@ -1,0 +1,32 @@
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="add-work" data-toggle="tab" href="#addwork" role="tab" aria-controls="add-work" aria-selected="false">Add Work</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Edit Work</a>
+    </li>
+ </ul>
+<div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <input [(ngModel)]="username" value="{{home.title}}" class="form-control">
+        <button (click)="saveValue(username)" class="btn btn-primary">Press me</button>
+    </div>
+    <div class="tab-pane fade" id="addwork" role="tabpanel" aria-labelledby="add-work">
+        <input [(ngModel)]="workValue" class="form-control">
+        <input [(ngModel)]="workBody" class="form-control">
+        <label>
+            <input type="file" (change)="detectFiles($event)">
+         </label>      
+        <button (click)="addWork(workValue, workBody, currentUpload)" [disabled]="!selectedFiles" class="btn btn-primary">Press me (work)</button>
+    </div>
+    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+        <ul>
+            <li *ngFor="let workItem of workItems | async" >
+                <a [routerLink]="['/edit/', convertUrl(workItem.id)]">{{workItem.title}}</a>
+            </li>  
+        </ul>        
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<div *ngIf="spinner" class="loader">LOADING</div>
+<div *ngIf ="!spinner" class="homepage d-flex">
+  <div class="homepage-info align-self-end">
+      <div class="col-lg-8 col-md-10">
+        <h1>{{home.title}}</h1>
+        <p>{{home.description}}</p>
+      </div>
+  </div>
+</div>

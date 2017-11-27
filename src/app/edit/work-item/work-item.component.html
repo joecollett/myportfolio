@@ -1,0 +1,4 @@
+<h1>Edit Work - {{workDetails.title}}</h1>
+  <input [(ngModel)]="workDetails.title" class="form-control" />
+  <textarea class="form-control" [(ngModel)]="workDetails.body" ></textarea>
+  <button (click)="saveValue(workDetails.title, workDetails.body)" class="btn btn-primary">Press me</button>
