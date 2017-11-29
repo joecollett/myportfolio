@@ -20,6 +20,7 @@ import { UploadFormComponent } from './uploads/upload-form/upload-form.component
 import { AuthService } from './service/auth.service';
 import { AuthGuard } from './service/auth-guard.service';
 import { LoginComponent } from './login/login.component';
+import {CKEditorModule} from 'ng2-ckeditor';
 
 
 
@@ -53,7 +54,8 @@ export const routes: Routes = [
     AngularFireAuthModule,
     FormsModule, 
     RouterModule.forRoot(routes),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    CKEditorModule
   ],
   providers: [
     ConvertUrlService,

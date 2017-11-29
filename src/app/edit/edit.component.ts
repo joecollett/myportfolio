@@ -26,11 +26,13 @@ export class EditComponent implements OnInit {
   workItems:Observable<any>;
   selectedFiles: FileList;
   currentUpload: Upload;  
+  content:any;
 
 
   constructor(public db: AngularFireDatabase, private upSvc: UploadService) {
     const homeRef = db.object<any>('home');
     const workRef = db.list<any>('work');
+    this.content = '<p>Hello <strong>World !</strong></p>'
     this.home = homeRef.valueChanges().subscribe(
       test => this.home = test
     );
