@@ -4,8 +4,10 @@
   <h2>Current Image</h2>
   <img [src]="workDetails.image" *ngIf="!imageurl">
   <label>
-    <input type="file" (change)="detectFiles($event)">
- </label>     
+    <input id="fileUpload" type="file" (change)="detectFiles($event)" [(ngModel)]="fileUpload"> 
+    {{this.imageurl}}
+ </label>    
+ <button (click)="removeImage()">Reset Image</button> 
  <img [src]="imageurl" *ngIf="imageurl">  
   <textarea class="form-control" [(ngModel)]="workDetails.body" ></textarea>
   <button (click)="saveValue(workDetails.title, workDetails.body, currentUpload, workDetails.caption)" class="btn btn-primary">Press me</button>  

@@ -27,6 +27,7 @@ export class WorkItemComponent implements OnInit {
   content:any;  
   imageurl:any;
   image:any;
+  fileUpload:any;
   constructor(public upSvc: UploadService, private route: ActivatedRoute, public db: AngularFireDatabase) { 
     this.url = '/work/' + this.route.snapshot.params.id;
     const workDetailsRef = db.object<any>(this.url);
@@ -73,6 +74,11 @@ export class WorkItemComponent implements OnInit {
         image: this.image.url
     })
     },3000);
+  }
+
+  removeImage(){
+    this.fileUpload = null;
+    this.imageurl = null;
   }
 
 }
