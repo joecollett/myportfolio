@@ -20,6 +20,10 @@
             <input [(ngModel)]="workValue" class="form-control" aria-describedby="title" placeholder="Enter title of work">
         </div>   
         <div class="form-group">
+            <label for="exampleInputEmail1">Caption</label>
+            <input [(ngModel)]="workCaption" class="form-control" aria-describedby="title" placeholder="Enter caption of work">
+        </div>           
+        <div class="form-group">
             <label for="exampleInputEmail1">Body</label>
             <ckeditor
             [(ngModel)]="workBody"
@@ -35,13 +39,14 @@
         <label>
             <input type="file" (change)="detectFiles($event)">
          </label>      
-        <button (click)="addWork(workValue, workBody, currentUpload)" [disabled]="!selectedFiles" class="btn btn-primary">Press me (work)</button>
+        <button (click)="addWork(workValue, workBody, currentUpload, workCaption)" [disabled]="!selectedFiles" class="btn btn-primary">Press me (work)</button>
     </div>
   {{ckeditorContent}}
     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
         <ul>
             <li *ngFor="let workItem of workItems | async" >
                 <a [routerLink]="['/edit/', convertUrl(workItem.id)]">{{workItem.title}}</a>
+                <button (click)="deleteWork(workItem)">Delete</button>
             </li>  
         </ul>        
     </div>

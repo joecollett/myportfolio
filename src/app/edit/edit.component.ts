@@ -21,6 +21,7 @@ export class EditComponent implements OnInit {
   homeRef:any;
   username: any;
   work:any;
+  caption:any;  
   workRef:AngularFireList<any>;
   workValue:any;
   workItems:Observable<any>;
@@ -49,20 +50,23 @@ export class EditComponent implements OnInit {
   detectFiles(event) {
     this.selectedFiles = event.target.files;
   }  
-  addWork(work, body, image){
+  addWork(work, body, image, caption){
     var workId = work.replace(/[^a-z0-9]/gi,'').toLowerCase();
     let file = this.selectedFiles.item(0)
     this.currentUpload = new Upload(file);  
     this.upSvc.pushUpload(this.currentUpload);
-    setTimeout(()=>{    //<<<---    using ()=> syntax
-      console.log(this.currentUpload.url);
+    setTimeout(()=>{   
       this.workRef.set(workId, {
         title: work,
+        caption: caption,
         body: body,
         id: workId,
         image: this.currentUpload.url
       });       
     },3000);
+  }
+  deleteWork(item){
+    this.workRef.remove(item.id)
   }
 
   convertUrl(input){

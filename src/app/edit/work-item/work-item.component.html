@@ -1,4 +1,11 @@
 <h1>Edit Work - {{workDetails.title}}</h1>
   <input [(ngModel)]="workDetails.title" class="form-control" />
+  <input [(ngModel)]="workDetails.caption" class="form-control" />
+  <h2>Current Image</h2>
+  <img [src]="workDetails.image" *ngIf="!imageurl">
+  <label>
+    <input type="file" (change)="detectFiles($event)">
+ </label>     
+ <img [src]="imageurl" *ngIf="imageurl">  
   <textarea class="form-control" [(ngModel)]="workDetails.body" ></textarea>
-  <button (click)="saveValue(workDetails.title, workDetails.body)" class="btn btn-primary">Press me</button>
+  <button (click)="saveValue(workDetails.title, workDetails.body, currentUpload, workDetails.caption)" class="btn btn-primary">Press me</button>  

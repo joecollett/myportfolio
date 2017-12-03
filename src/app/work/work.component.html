@@ -2,6 +2,6 @@
   <li *ngFor="let work of workItems | async" >
     <a [routerLink]="['/work/', convertUrl(work.id)]">{{work.title}}</a>
     <img [src]="work.image" />
-    <div [innerHTML]="work.body"></div>
+    <div [innerHTML]="work.caption"></div>
   </li>  
 </ul>

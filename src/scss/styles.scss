@@ -20,6 +20,9 @@ body {
 a.nav-link {
   color:#333;
 }
+img {
+    max-width:100%;
+}
 .homepage {
     min-height: calc(100vh - 87px);
     color:$homepage-color;

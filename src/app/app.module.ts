@@ -20,7 +20,8 @@ import { UploadFormComponent } from './uploads/upload-form/upload-form.component
 import { AuthService } from './service/auth.service';
 import { AuthGuard } from './service/auth-guard.service';
 import { LoginComponent } from './login/login.component';
-import {CKEditorModule} from 'ng2-ckeditor';
+import { CKEditorModule } from 'ng2-ckeditor';
+import { UploadService } from './uploads/shared/upload.service';
 
 
 
@@ -60,7 +61,8 @@ export const routes: Routes = [
   providers: [
     ConvertUrlService,
     AuthService,
-    AuthGuard
+    AuthGuard,
+    UploadService
   ],
   bootstrap: [AppComponent]
 })
