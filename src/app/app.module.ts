@@ -22,6 +22,7 @@ import { AuthGuard } from './service/auth-guard.service';
 import { LoginComponent } from './login/login.component';
 import { CKEditorModule } from 'ng2-ckeditor';
 import { UploadService } from './uploads/shared/upload.service';
+import { SafeHtmlPipe } from './pipes/safe-html-pipe.pipe';
 
 
 
@@ -46,7 +47,8 @@ export const routes: Routes = [
     WorkItemComponent,
     NavbarComponent,
     UploadFormComponent,
-    LoginComponent
+    LoginComponent,
+    SafeHtmlPipe
   ],
   imports: [
     BrowserModule,

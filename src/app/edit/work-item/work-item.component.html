@@ -9,5 +9,14 @@
  </label>    
  <button (click)="removeImage()">Reset Image</button> 
  <img [src]="imageurl" *ngIf="imageurl">  
-  <textarea class="form-control" [(ngModel)]="workDetails.body" ></textarea>
+ <ckeditor
+ [(ngModel)]="workDetails.body"
+ [config]="{uiColor: '#99000'}"
+ [readonly]="false"
+ (change)="onChange($event)"
+ (ready)="onReady($event)"
+ (focus)="onFocus($event)"
+ (blur)="onBlur($event)"
+ debounce="500">
+</ckeditor> 
   <button (click)="saveValue(workDetails.title, workDetails.body, currentUpload, workDetails.caption)" class="btn btn-primary">Press me</button>  

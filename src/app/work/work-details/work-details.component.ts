@@ -5,6 +5,7 @@ import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { fadeInAnimation } from '../../animations/index';
 import { FormsModule } from '@angular/forms';
 
+
 @Component({
   selector: 'app-work-details',
   templateUrl: './work-details.component.html',
