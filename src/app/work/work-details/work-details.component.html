@@ -1,6 +1,6 @@
-<div>
-  <img [src]="workDetails.image" />
-  <h2>{{workDetails.title}}</h2>
-  <div [innerHTML]="workDetails.body | safeHtml"></div>
+<div *ngIf="workDetails?.image">
+  <img [src]="workDetails?.image" />
+  <h2>{{workDetails?.title}}</h2>
+  <div [innerHTML]="workDetails?.body | safeHtml"></div>
 </div>
-<button routerLink="/work">Back</button>
+<button *ngIf="workDetails?.image" routerLink="/work">Back</button>

@@ -1,0 +1,20 @@
+body.home {
+    background:$body-home;
+    position:fixed;
+    background-position: bottom left;
+    .homepage {
+        min-height: calc(100vh - 87px);
+        color:$homepage-color;
+        .homepage-info {
+            margin-bottom:25vh;   
+            p {
+                color:$homepage-p-color;
+                font-size:1.3rem;
+                font-weight:100;
+            }     
+            h1 {
+                font-size:3rem;
+            }
+        }
+    }    
+}

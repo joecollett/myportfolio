@@ -1,40 +1,24 @@
+/******* VENDORS *******/
+
 @import url("https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css");
 @import url('https://fonts.googleapis.com/css?family=Mada:100,200,300,400,900');
+@import "../../node_modules/ng2-toastr/bundles/ng2-toastr.min.css";
 
-$body:#0D1114 url("https://image.shutterstock.com/z/stock-photo-woman-hand-holding-the-black-smartphone-with-blank-screen-and-modern-frame-less-design-isolated-717952201.jpg");
-$homepage-color:#333;
-$homepage-p-color:darken($homepage-color, 20%);
+/******* UTILS *******/
 
-body {
-    background:$body;
-    font-family: 'Mada', sans-serif;
-    background-size:cover;
-    color:#333;
-}
-.container-fluid {
-  padding:30px 50px 0;
-}
-.navbar-nav {
-  margin-right:-20px;
-}
-a.nav-link {
-  color:#333;
-}
-img {
-    max-width:100%;
-}
-.homepage {
-    min-height: calc(100vh - 87px);
-    color:$homepage-color;
-    .homepage-info {
-        margin-bottom:25vh;   
-        p {
-            color:$homepage-p-color;
-            font-size:1.3rem;
-            font-weight:100;
-        }     
-        h1 {
-            font-size:3rem;
-        }
-    }
-}
+@import './utils/variables.scss';
+
+/******* BASE *******/
+
+@import './base/general';
+@import './base/spacing';
+
+/******* PAGES *******/
+
+@import './pages/homepage';
+@import './pages/work';
+
+/******* COMPONENTS *******/
+
+@import './components/spinner';
+@import './components/navigation';

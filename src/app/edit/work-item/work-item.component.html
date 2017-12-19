@@ -3,20 +3,20 @@
   <input [(ngModel)]="workDetails.caption" class="form-control" />
   <h2>Current Image</h2>
   <img [src]="workDetails.image" *ngIf="!imageurl">
+  <img [src]="workDetails.captionImg" *ngIf="!captionurl">
   <label>
     <input id="fileUpload" type="file" (change)="detectFiles($event)" [(ngModel)]="fileUpload"> 
-    {{this.imageurl}}
- </label>    
- <button (click)="removeImage()">Reset Image</button> 
+ </label>
+ <label>
+  <input id="captionImgUpload" type="file" (change)="detectCaptionImg($event)" [(ngModel)]="captionImgUpload"> 
+</label>      
+ <button (click)="removeImage()" *ngIf="imageurl">Reset Image</button> 
  <img [src]="imageurl" *ngIf="imageurl">  
+ <img [src]="captionurl" *ngIf="captionurl">  
  <ckeditor
  [(ngModel)]="workDetails.body"
  [config]="{uiColor: '#99000'}"
- [readonly]="false"
- (change)="onChange($event)"
- (ready)="onReady($event)"
- (focus)="onFocus($event)"
- (blur)="onBlur($event)"
- debounce="500">
+ >
 </ckeditor> 
-  <button (click)="saveValue(workDetails.title, workDetails.body, currentUpload, workDetails.caption)" class="btn btn-primary">Press me</button>  
+<button (click)="saveValue(workDetails.title, workDetails.body, currentUpload, captionUpload, workDetails.caption)" class="btn btn-primary">Press me</button>  
+<app-loading-spinner *ngIf="showSpinner"></app-loading-spinner> 

@@ -23,6 +23,8 @@ import { LoginComponent } from './login/login.component';
 import { CKEditorModule } from 'ng2-ckeditor';
 import { UploadService } from './uploads/shared/upload.service';
 import { SafeHtmlPipe } from './pipes/safe-html-pipe.pipe';
+import { LoadingSpinnerComponent } from './ui/loading-spinner/loading-spinner.component';
+import { ToastModule } from 'ng2-toastr/ng2-toastr';
 
 
 
@@ -48,7 +50,8 @@ export const routes: Routes = [
     NavbarComponent,
     UploadFormComponent,
     LoginComponent,
-    SafeHtmlPipe
+    SafeHtmlPipe,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +61,8 @@ export const routes: Routes = [
     FormsModule, 
     RouterModule.forRoot(routes),
     BrowserAnimationsModule,
-    CKEditorModule
+    CKEditorModule,
+    ToastModule.forRoot()
   ],
   providers: [
     ConvertUrlService,

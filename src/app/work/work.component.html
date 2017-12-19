@@ -1,7 +1,9 @@
-<ul>
-  <li *ngFor="let work of workItems | async" >
-    <a [routerLink]="['/work/', convertUrl(work.id)]">{{work.title}}</a>
-    <img [src]="work.image" />
-    <div [innerHTML]="work.caption"></div>
-  </li>  
-</ul>
+<div class="row margin-top-md">
+  <div class="col-lg-6 margin-bottom-sm" *ngFor="let work of workItems | async" >
+    <a [routerLink]="['/work/', convertUrl(work.id)]" *ngIf="work?.caption">
+      <img class="workImage" [src]="work.captionImg" />
+      {{work.title}}
+      <div [innerHTML]="work.caption"></div>
+    </a>
+  </div>  
+</div>
