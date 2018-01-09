@@ -35,6 +35,7 @@ export class WorkItemComponent implements OnInit {
   captionimage:any;
   fileUpload:any;
   showSpinner: boolean = false;
+  captionImgUpload;
 
   constructor(private router: Router, public upSvc: UploadService, private route: ActivatedRoute, public db: AngularFireDatabase, public toastr: ToastsManager, vcr: ViewContainerRef) { 
     this.url = '/work/' + this.route.snapshot.params.id;
@@ -73,7 +74,7 @@ export class WorkItemComponent implements OnInit {
     this.selectedCaptionImg = event.target.files;
   }    
 
-  saveValue(name, html, image, captionimage, caption){
+  saveValue(name, html, image, captionimage, caption, color){
     this.showSpinner = true;
     if(!this.imageurl){
       this.image = {
@@ -104,7 +105,8 @@ export class WorkItemComponent implements OnInit {
         body: html, 
         caption: caption,
         image: this.image.url,
-        captionImg: this.captionimage.url
+        captionImg: this.captionimage.url,
+        backgroundcolor: color
     })
     .then(resolve => {
       this.showSpinner = false;

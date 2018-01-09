@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-lg">
-    <a class="navbar-brand">
-        <h1 *ngIf="authService.user | async">Welcome {{ (authService.user | async)?.email }}!</h1>        
+    <a class="navbar-brand" routerLink="/home">
+        <!-- <h1 *ngIf="authService.user | async">Welcome {{ (authService.user | async)?.email }}!</h1>         -->
+        <img src="https://firebasestorage.googleapis.com/v0/b/joecollett-c2ff6.appspot.com/o/uploads%2Flogo2.jpg?alt=media&token=fe918a97-439a-44e2-8218-622c05703c9c" alt="">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -16,9 +17,9 @@
             <li class="nav-item" *ngIf="authService.user | async">
                 <a class="nav-link" routerLink="/upload" routerLinkActive="active">Upload</a>
             </li>   
-            <li class="nav-item" *ngIf="authService.authState === null">
+            <!-- <li class="nav-item" *ngIf="authService.authState === null">
                 <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
-            </li>                   
+            </li>                    -->
             <li class="nav-item">
                 <a class="nav-link" href="#">Profile</a>
             </li>            

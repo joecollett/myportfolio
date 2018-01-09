@@ -1,5 +1,5 @@
-<div *ngIf="workDetails?.image">
-  <img [src]="workDetails?.image" />
+<div *ngIf="workDetails?.image" class="workItem">
+  <img [src]="workDetails?.image" class="workImageMain"/>
   <h2>{{workDetails?.title}}</h2>
   <div [innerHTML]="workDetails?.body | safeHtml"></div>
 </div>

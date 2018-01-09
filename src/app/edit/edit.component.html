@@ -13,7 +13,8 @@
 <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
         <input [(ngModel)]="username" value="{{home.title}}" class="form-control">
-        <button (click)="saveValue(username)" class="btn btn-primary">Press me</button>
+        <input [(ngModel)]="description" value="{{home.description}}" class="form-control">
+        <button (click)="saveValue(username, description)" class="btn btn-primary">Press me</button>
     </div>
     <div class="tab-pane fade" id="addwork" role="tabpanel" aria-labelledby="add-work">
         <div class="form-group">
@@ -23,7 +24,11 @@
         <div class="form-group">
             <label for="exampleInputEmail1">Caption</label>
             <input [(ngModel)]="workCaption" class="form-control" aria-describedby="title" placeholder="Enter caption of work">
-        </div>           
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Primary Colour</label>
+            <input [(ngModel)]="workPrimaryColor" class="form-control" aria-describedby="workPrimaryColor" placeholder="Enter primary colour">
+        </div>                     
         <div class="form-group">
             <label for="exampleInputEmail1">Body</label>
             <ckeditor
@@ -37,7 +42,7 @@
          <label>
             <input type="file" (change)="detectCaptionImage($event)">
          </label>                
-        <button (click)="addWork(workValue, workBody, currentUpload, workCaption)" [disabled]="!selectedFiles" class="btn btn-primary">Press me (work)</button>
+        <button (click)="addWork(workValue, workBody, currentUpload, workCaption, workPrimaryColor)" [disabled]="!selectedFiles" class="btn btn-primary">Press me (work)</button>
     </div>
   {{ckeditorContent}}
     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">

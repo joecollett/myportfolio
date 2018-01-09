@@ -27,6 +27,7 @@ export class AppComponent {
    constructor(private renderer: Renderer2, private router: Router) {
      this.router.events
        .subscribe((event) => {
+        setTimeout(()=>{  
          if (event instanceof NavigationStart) {
            if (this.previousUrl) {
              this.renderer.removeClass(document.body, this.previousUrl);
@@ -37,8 +38,8 @@ export class AppComponent {
            }
            this.previousUrl = currentUrlSlug;
          }
+        },400)
        });
-  
    }  
   prepareRouteTransition(outlet) {
     const animation = outlet.activatedRouteData['animation'] || {};

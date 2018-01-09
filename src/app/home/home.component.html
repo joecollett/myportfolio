@@ -1,9 +1,17 @@
+<img class="homepage-image" src="https://firebasestorage.googleapis.com/v0/b/joecollett-c2ff6.appspot.com/o/uploads%2Fbackground3.jpg?alt=media&token=f56f1ef3-7e85-4441-a58e-b8013759fbbf" />
 <div *ngIf="spinner" class="loader">LOADING</div>
 <div *ngIf ="!spinner" class="homepage d-flex">
   <div class="homepage-info align-self-end">
-      <div class="col-lg-8 col-md-10">
+      <div class="col-lg-7 col-md-7">
         <h1>{{home.title}}</h1>
-        <p>{{home.description}}</p>
+        <div class="homepage-text" [innerHTML]="home.description | safeHtml"></div>
+        <a href="" class="homepage-button-learn">FIND OUT MORE          
+          <svg height="30" width="100" style="background:transparent; padding-top:10px; padding-left:10px;" stroke="#333" fill="transparent" stroke-width="1px">
+            <path d="M 0 15 L 30 15"></path> 
+            <path d="M 25 19 L 30 15"></path> 
+            <path d="M 25 11 L 30 15"></path> 
+          </svg>            
+        </a>      
       </div>
   </div>
 </div>

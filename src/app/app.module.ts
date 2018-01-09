@@ -25,6 +25,8 @@ import { UploadService } from './uploads/shared/upload.service';
 import { SafeHtmlPipe } from './pipes/safe-html-pipe.pipe';
 import { LoadingSpinnerComponent } from './ui/loading-spinner/loading-spinner.component';
 import { ToastModule } from 'ng2-toastr/ng2-toastr';
+import { OrderModule } from 'ngx-order-pipe';
+import { ReversePipe } from './pipes/reverse.pipe';
 
 
 
@@ -51,7 +53,8 @@ export const routes: Routes = [
     UploadFormComponent,
     LoginComponent,
     SafeHtmlPipe,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    ReversePipe,
   ],
   imports: [
     BrowserModule,
@@ -62,7 +65,8 @@ export const routes: Routes = [
     RouterModule.forRoot(routes),
     BrowserAnimationsModule,
     CKEditorModule,
-    ToastModule.forRoot()
+    ToastModule.forRoot(),
+    OrderModule
   ],
   providers: [
     ConvertUrlService,

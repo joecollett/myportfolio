@@ -14,12 +14,14 @@ import { fadeInAnimation } from '../animations/index';
 export class HomeComponent implements OnInit {
   home:any;
   spinner:any;
+  words:any;
 
   constructor(public db: AngularFireDatabase, private auth: AuthService) {
     const homeRef = db.object<any>('home');
     this.home = homeRef.valueChanges().subscribe(
       home => this.home = home
     );  
+    this.words = ["joe", "alex", "andy", "julie"];
   }
 
   ngOnInit() {

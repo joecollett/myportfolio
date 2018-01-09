@@ -33,6 +33,12 @@ export class EditComponent implements OnInit {
   currentUpload: Upload;  
   content:any;
   showSpinner: boolean = false;
+  ckeditorContent;
+  workBody;
+  workPrimaryColor;
+  workCaption;
+  description;
+  
 
 
   constructor(public db: AngularFireDatabase, private upSvc: UploadService, private router: Router, public toastr: ToastsManager, vcr: ViewContainerRef) {
@@ -50,8 +56,8 @@ export class EditComponent implements OnInit {
     this.workItems = workRef.valueChanges();
     this.toastr.setRootViewContainerRef(vcr);
   } 
-  saveValue(name){
-    this.homeRef.update({title: name})
+  saveValue(name, desc){
+    this.homeRef.update({title: name, description:desc})
   }
   detectFiles(event) {
     this.selectedFiles = event.target.files;
@@ -59,7 +65,7 @@ export class EditComponent implements OnInit {
   detectCaptionImage(event) {
     this.captionImage = event.target.files;
   }     
-  addWork(work, body, image, caption){
+  addWork(work, body, image, caption, color){
     var workId = work.replace(/[^a-z0-9]/gi,'').toLowerCase();
     let file = this.selectedFiles.item(0);
     let captionImg = this.captionImage.item(0);
@@ -75,7 +81,9 @@ export class EditComponent implements OnInit {
         body: body,
         id: workId,
         image: this.currentUpload.url,
-        captionImg: this.currentCaptionImage.url
+        captionImg: this.currentCaptionImage.url,
+        dateAdded: firebase.database.ServerValue.TIMESTAMP,
+        backgroundcolor: color
       }).then(resolve => {
         this.showSpinner = false;
         this.toastr.success("You're changes have been saved!", "Success!");
