@@ -3,7 +3,7 @@ body.home {
         min-height: calc(100vh - 87px);
         color:$homepage-color;        
         .homepage-info {
-            margin-bottom:30vh;   
+            margin-bottom:20vh;   
             .homepage-text {
                 color:$homepage-p-color;
                 font-size:1.3rem;
@@ -12,6 +12,7 @@ body.home {
             }     
             h1 {
                 font-size:3rem;
+                letter-spacing:3px;
             }
         }
         .homepage-button-learn {
