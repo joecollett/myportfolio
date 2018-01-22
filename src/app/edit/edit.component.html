@@ -34,12 +34,7 @@
             <ckeditor
             [(ngModel)]="workBody"
             [config]="{uiColor: '#99000', allowedContent:true}"
-            [readonly]="false"
-            (change)="onChange($event)"
-            (ready)="onReady($event)"
-            (focus)="onFocus($event)"
-            (blur)="onBlur($event)"
-            debounce="500">
+            >
           </ckeditor>
         </div>         
         {{workBody}}      

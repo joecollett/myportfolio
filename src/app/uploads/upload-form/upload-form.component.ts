@@ -13,6 +13,7 @@ import * as _ from "lodash";
 export class UploadFormComponent {
   selectedFiles: FileList;
   currentUpload: Upload;
+  returnUrl:any;
   constructor(private upSvc: UploadService) { }
   detectFiles(event) {
       this.selectedFiles = event.target.files;
@@ -21,13 +22,9 @@ export class UploadFormComponent {
     let file = this.selectedFiles.item(0)
     this.currentUpload = new Upload(file);
     this.upSvc.pushUpload(this.currentUpload)
-  }
-  uploadMulti() {
-    let files = this.selectedFiles
-    let filesIndex = _.range(files.length)
-    _.each(filesIndex, (idx) => {
-      this.currentUpload = new Upload(files[idx]);
-      this.upSvc.pushUpload(this.currentUpload)}
-    )
+    console.log(this.currentUpload.progress)
+    setTimeout(()=> {
+      this.returnUrl = "<div>" + this.currentUpload.url + "</div>";
+    },7000)
   }
 }
