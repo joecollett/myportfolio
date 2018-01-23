@@ -33,13 +33,7 @@
             <label for="exampleInputEmail1">Body</label>
             <ckeditor
             [(ngModel)]="workBody"
-            [config]="{uiColor: '#99000', allowedContent:true}"
-            [readonly]="false"
-            (change)="onChange($event)"
-            (ready)="onReady($event)"
-            (focus)="onFocus($event)"
-            (blur)="onBlur($event)"
-            debounce="500">
+            [config]="{uiColor: '#99000', allowedContent:true}">
           </ckeditor>
         </div>         
         {{workBody}}      
