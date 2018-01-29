@@ -1,9 +1,18 @@
 body.home {   
+    .outer-container {
+        background:url("https://firebasestorage.googleapis.com/v0/b/joecollett-c2ff6.appspot.com/o/uploads%2Fnewbackgroundsmall.jpg?alt=media&token=17146c0d-dfda-4f1c-918b-dcca28c66673");   
+        display: flex;
+        flex-direction: column;
+        height: calc(100% - 30px);
+        margin-top: 15px;
+        margin-bottom: 15px;    
+        padding-left:60px;
+        padding-right:60px; 
+    }
     .homepage {  
-        min-height: calc(100vh - 87px);
-        color:$homepage-color;        
+        color:$homepage-color;             
         .homepage-info {
-            margin-bottom:20vh;   
+            margin-top:3vh;   
             .homepage-text {
                 color:$homepage-p-color;
                 font-size:1.3rem;
@@ -13,13 +22,15 @@ body.home {
             h1 {
                 font-size:3rem;
                 letter-spacing:3px;
+                margin-top:15vh;
+                font-weight:400;
             }
         }
         .homepage-button-learn {
-            margin-top:40px;
+            margin-top:30px;
             font-size:0.8rem;
             display:block;
-            color:#333;
+            color:#fff;
             font-weight:100;
             letter-spacing:2px;
         }
