@@ -1,0 +1,16 @@
+ <!-- The overlay -->
+ <div id="myNav" class="overlay">
+  
+    <!-- Overlay content -->
+    <div class="overlay-content">
+        <app-nav></app-nav>
+    </div>
+  
+  </div>
+  
+  <!-- Use any element to open/show the overlay navigation menu -->
+  <div id="nav-icon1" (click)="status=!status; checkStatus(status)" [ngClass]="status ? 'open' : 'closed'" type="button" class="d-lg-none" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>     

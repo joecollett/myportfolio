@@ -27,6 +27,8 @@ import { LoadingSpinnerComponent } from './ui/loading-spinner/loading-spinner.co
 import { ToastModule } from 'ng2-toastr/ng2-toastr';
 import { OrderModule } from 'ngx-order-pipe';
 import { ReversePipe } from './pipes/reverse.pipe';
+import { NavFullComponent } from './nav-full/nav-full.component';
+import { NavComponent } from './navbar/nav/nav.component';
 
 
 
@@ -55,6 +57,8 @@ export const routes: Routes = [
     SafeHtmlPipe,
     LoadingSpinnerComponent,
     ReversePipe,
+    NavFullComponent,
+    NavComponent,
   ],
   imports: [
     BrowserModule,

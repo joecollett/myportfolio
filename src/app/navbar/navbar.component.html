@@ -3,35 +3,11 @@
         <!-- <h1 *ngIf="authService.user | async">Welcome {{ (authService.user | async)?.email }}!</h1>         -->
         <img src="https://firebasestorage.googleapis.com/v0/b/joecollett-c2ff6.appspot.com/o/uploads%2Flogo-grey.png?alt=media&token=75e6b593-da8d-4fa8-b9d8-e3a5235a1bb3" alt="">
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/home" routerLinkActive="active">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/work" routerLinkActive="active">Work</a>
-            </li>
-            <li class="nav-item" *ngIf="authService.user | async">
-                <a class="nav-link" routerLink="/upload" routerLinkActive="active">Upload</a>
-            </li>   
-            <!-- <li class="nav-item" *ngIf="authService.authState === null">
-                <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
-            </li>                    -->
-            <li class="nav-item">
-                <a class="nav-link" href="#">Profile</a>
-            </li>            
-            <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
-            </li>
-            <li class="nav-item" *ngIf="authService.user | async">
-                <a class="nav-link" routerLink="/edit" routerLinkActive="active"  href="#">Edit</a>
-            </li> 
-            <li class="nav-item" *ngIf="authService.user | async" (click)="logout()">
-                <a class="nav-link" routerLink="/login" href="#">Logout</a>
-            </li>                        
-        </ul>
+    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>      
+    </button> -->    
+    <div class="collapse navbar-collapse justify-content-end d-none d-lg-block" id="navbarNav">
+        <app-nav></app-nav>
     </div>
+    <app-nav-full class="d-lg-none"></app-nav-full>
 </nav>

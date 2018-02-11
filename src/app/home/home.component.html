@@ -1,7 +1,7 @@
 <!-- <img class="homepage-image" src="https://firebasestorage.googleapis.com/v0/b/joecollett-c2ff6.appspot.com/o/uploads%2Fbackground3.jpg?alt=media&token=f56f1ef3-7e85-4441-a58e-b8013759fbbf" /> -->
 <div *ngIf="spinner" class="loader">LOADING</div>
 <div *ngIf ="!spinner" class="homepage d-flex">
-  <div class="homepage-info align-self-end">
+  <div class="homepage-info align-self-end row">
       <div class="col-lg-8 col-md-10">
         <h1>{{home.title}}</h1>
         <div class="homepage-text" [innerHTML]="home.description | safeHtml"></div>

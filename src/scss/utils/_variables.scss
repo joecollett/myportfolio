@@ -3,8 +3,11 @@ $body: #ffffff;
 $body-home: url("https://image.shutterstock.com/z/stock-photo-laptop-with-office-supplies-at-gray-desk-657405685.jpg");
 $homepage-color:#fff;
 $homepage-p-color:darken($homepage-color, 20%);
+$outer-container-background: #404040;
 
 $text-color: #333;
 $work-title-color: $text-color;
 $caption-color: $text-color;
 $work-title-size: 1.2rem;
+
+$screen-lg: 992px;

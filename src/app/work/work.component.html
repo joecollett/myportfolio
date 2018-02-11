@@ -1,11 +1,19 @@
-<div class="row margin-top-md">
-  <div class="col-lg-6 margin-bottom-sm work-container" *ngFor="let work of workItems | async | reverse" >
-      <a [routerLink]="['/work/', convertUrl(work.id)]" *ngIf="work?.caption" class="a-work">
-        <div class="workImageContainer" [style.backgroundColor]="work?.backgroundcolor">
-          <img class="workImage" [src]="work.captionImg" />
-        </div>  
-        <h3 class="workTitle">{{work.title}}</h3>
-        <div class="caption" [innerHTML]="work.caption"></div>
-      </a>
-  </div>  
+<div class="work-page-container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h1>My Work</h1>
+        <p>Here is a quick snapshot of my work portfolio. If you’re interested in seeing more message me on Linkedin. Enjoy!</p>
+      </div>
+    </div>
+    <div class="row padding-top-md">
+      <div class="col-lg-6 margin-bottom-sm work-container" *ngFor="let work of workItems | async | reverse" >
+          <a [routerLink]="['/work/', convertUrl(work.id)]" *ngIf="work?.caption" class="a-work">
+            <div class="workImageContainer" [style.backgroundColor]="work?.backgroundcolor">
+              <img class="workImage" [src]="work.captionImg" />
+            </div>  
+            <h3 class="workTitle">{{work.title}}</h3>
+            <div class="caption" [innerHTML]="work.caption"></div>
+          </a>
+      </div>  
+    </div>
 </div>

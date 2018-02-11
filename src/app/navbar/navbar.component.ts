@@ -10,6 +10,8 @@ import * as firebase from 'firebase/app';
 })
 export class NavbarComponent implements OnInit {
 
+  status:any;
+
   constructor(public authService: AuthService, private router: Router) {
 
   }

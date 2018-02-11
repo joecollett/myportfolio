@@ -15,3 +15,11 @@ img {
     display:flex;
     justify-content: center;    
 }
+.outer-container {
+    background:$outer-container-background;
+    padding-left:60px;
+    padding-right:60px;      
+    min-height: calc(100vh - 30px);
+    margin-top: 15px;
+    margin-bottom: 15px;     
+}

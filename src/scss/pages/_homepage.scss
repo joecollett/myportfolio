@@ -1,13 +1,23 @@
 body.home {   
+    background:url("https://firebasestorage.googleapis.com/v0/b/joecollett-c2ff6.appspot.com/o/uploads%2Fnewbackground-mobile.jpg?alt=media&token=efa0e241-1c1d-4c90-b5e8-88668fcf2d25");             
+    background-size:cover;
+    @media(min-width: $screen-lg){
+        background:transparent;
+    }
     .outer-container {
-        background:url("https://firebasestorage.googleapis.com/v0/b/joecollett-c2ff6.appspot.com/o/uploads%2Fnewbackgroundsmall.jpg?alt=media&token=17146c0d-dfda-4f1c-918b-dcca28c66673");   
-        display: flex;
-        flex-direction: column;
-        height: calc(100% - 30px);
-        margin-top: 15px;
-        margin-bottom: 15px;    
-        padding-left:60px;
-        padding-right:60px; 
+        @media(min-width: $screen-lg){
+            min-height: 500px;
+            padding-left:60px;
+            padding-right:60px;      
+            height: calc(100% - 30px);
+            margin-top: 15px;
+            margin-bottom: 15px;          
+            background:url("https://firebasestorage.googleapis.com/v0/b/joecollett-c2ff6.appspot.com/o/uploads%2Fnewbackground.jpg?alt=media&token=5773c2c0-8ead-49fc-aa42-81fb4c26829b");             
+            display: flex;
+            flex-direction: column;   
+            background-size:cover;
+            background-position: top left;            
+        }
     }
     .homepage {  
         color:$homepage-color;             
@@ -20,10 +30,14 @@ body.home {
                 line-height:2.2rem;
             }     
             h1 {
-                font-size:3rem;
+                font-size:2.4rem;
                 letter-spacing:3px;
-                margin-top:15vh;
+                margin-top:10vh;
                 font-weight:400;
+                @media(min-width: $screen-lg) {
+                    font-size:3rem;
+                    margin-top:10vh;
+                }
             }
         }
         .homepage-button-learn {
