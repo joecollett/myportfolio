@@ -4,6 +4,22 @@ body {
     background-size:cover;
     color:#333;
 }
+h1 {
+    font-size:2.4rem;
+    letter-spacing:3px;
+    margin-top:10vh;
+    font-weight:400;
+    @media(min-width: $screen-lg) {
+        font-size:3rem;
+        margin-top:10vh;
+    }
+}
+p {
+    color:$homepage-p-color;
+    font-size:1.3rem;
+    font-weight:100;
+    line-height:2.2rem;    
+}
 a.nav-link {
     color:#333;
 }
@@ -17,8 +33,8 @@ img {
 }
 .outer-container {
     background:$outer-container-background;
-    padding-left:60px;
-    padding-right:60px;      
+    padding-left:0px;
+    padding-right:0px;      
     min-height: calc(100vh - 30px);
     margin-top: 15px;
     margin-bottom: 15px;     

@@ -4,6 +4,9 @@ body.home {
     @media(min-width: $screen-lg){
         background:transparent;
     }
+    .navbar {
+        background:transparent;
+    }    
     .outer-container {
         @media(min-width: $screen-lg){
             min-height: 500px;
@@ -48,6 +51,12 @@ body.home {
             font-weight:100;
             letter-spacing:2px;
         }
+    }    
+    .navbar-expand-lg .navbar-nav .nav-link {
+        color:#fff;
+    }
+    #navbarNav {
+        margin-top:30px;
     }    
 }
 .homepage-image {
