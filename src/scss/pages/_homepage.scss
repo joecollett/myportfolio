@@ -1,12 +1,24 @@
-body.home {   
-    background:url("https://firebasestorage.googleapis.com/v0/b/joecollett-c2ff6.appspot.com/o/uploads%2Fnewbackground-mobile.jpg?alt=media&token=efa0e241-1c1d-4c90-b5e8-88668fcf2d25");             
+body{   
     background-size:cover;
+    background:#fff;
     @media(min-width: $screen-lg){
         background:transparent;
+    }
+    .home-logo {
+        display:block !important;
+    }
+    .blue-logo {
+        display:none !important;
     }
     .navbar {
         background:transparent;
     }    
+    &.home {
+        .outer-container {
+            background:url("https://firebasestorage.googleapis.com/v0/b/joecollett-c2ff6.appspot.com/o/uploads%2Fnewbackground.jpg?alt=media&token=5773c2c0-8ead-49fc-aa42-81fb4c26829b");             
+            background-size:cover;
+        }
+    }
     .outer-container {
         @media(min-width: $screen-lg){
             min-height: 500px;
@@ -15,11 +27,11 @@ body.home {
             height: calc(100% - 30px);
             margin-top: 15px;
             margin-bottom: 15px;          
-            background:url("https://firebasestorage.googleapis.com/v0/b/joecollett-c2ff6.appspot.com/o/uploads%2Fnewbackground.jpg?alt=media&token=5773c2c0-8ead-49fc-aa42-81fb4c26829b");             
             display: flex;
             flex-direction: column;   
             background-size:cover;
-            background-position: top left;            
+            background-position: top left;         
+            background-size:cover;   
         }
     }
     .homepage {  

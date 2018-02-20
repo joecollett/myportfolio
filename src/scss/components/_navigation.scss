@@ -1,4 +1,5 @@
 .navbar-brand {
+    z-index: 1;    
     img {
         height: 30px;
         z-index:9999;
@@ -108,7 +109,4 @@
     -moz-transform: rotate(-135deg);
     -o-transform: rotate(-135deg);
     transform: rotate(-135deg);
-  }
-  .navbar {
-      background:#fff;
   }

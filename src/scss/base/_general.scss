@@ -5,10 +5,11 @@ body {
     color:#333;
 }
 h1 {
-    font-size:2.4rem;
+    font-size:5rem;
     letter-spacing:3px;
-    margin-top:10vh;
+    margin-top:20vh;
     font-weight:400;
+    margin-bottom:20px;
     @media(min-width: $screen-lg) {
         font-size:3rem;
         margin-top:10vh;
@@ -16,15 +17,19 @@ h1 {
 }
 p {
     color:$homepage-p-color;
-    font-size:1.3rem;
+    font-size:2rem;
     font-weight:100;
     line-height:2.2rem;    
+    word-spacing:2px;
 }
 a.nav-link {
     color:#333;
 }
 img {
     max-width:100%;
+}
+.d-flex-1 {
+    flex:1;
 }
 .muted-background {
     background:#eee;
@@ -33,9 +38,32 @@ img {
 }
 .outer-container {
     background:$outer-container-background;
+    background-size:cover;
     padding-left:0px;
     padding-right:0px;      
     min-height: calc(100vh - 30px);
     margin-top: 15px;
     margin-bottom: 15px;     
+}
+.top-container {
+    height: 650px;
+    background: #333;
+    margin-top: -83px;
+    margin-left: -60px;
+    margin-right: -60px;
+    padding-left:60px;
+    padding-right:60px;
+    padding-top: 83px; 
+    // height:calc(100vh - 30px);
+}
+h1 {
+    font-size:2.4rem;
+    letter-spacing:3px;
+    margin-top:20vh;
+    font-weight:400;
+    color:#fff;
+    @media(min-width: $screen-lg) {
+        font-size:3rem;
+        margin-top:10vh;
+    }
 }
