@@ -1,37 +1,19 @@
 body{   
-    background-size:cover;
-    background:#fff;
-    @media(min-width: $screen-lg){
-        background:transparent;
-    }
-    .home-logo {
-        display:block !important;
-    }
-    .blue-logo {
-        display:none !important;
-    }
-    .navbar {
-        background:transparent;
-    }    
     &.home {
-        .outer-container {
-            background:url("https://firebasestorage.googleapis.com/v0/b/joecollett-c2ff6.appspot.com/o/uploads%2Fnewbackground.jpg?alt=media&token=5773c2c0-8ead-49fc-aa42-81fb4c26829b");             
-            background-size:cover;
-        }
-    }
-    .outer-container {
-        @media(min-width: $screen-lg){
-            min-height: 500px;
-            padding-left:60px;
-            padding-right:60px;      
-            height: calc(100% - 30px);
-            margin-top: 15px;
-            margin-bottom: 15px;          
-            display: flex;
-            flex-direction: column;   
-            background-size:cover;
-            background-position: top left;         
-            background-size:cover;   
+        footer {
+            display:none !important;
+        }    
+        .top-container {
+            background: url("https://firebasestorage.googleapis.com/v0/b/joecollett-c2ff6.appspot.com/o/uploads%2Fbackground2.jpg?alt=media&token=e8c2b12c-d5e8-49ec-8d2e-ca2228322cb8");
+            background-position-x: 0%;
+            background-position-y: 0%;
+            background-size: auto auto;
+            height: calc(100vh - 30px);
+            background-size: cover;
+            background-position: 0 -150px;
+            h1 {
+                margin-top:50vh;
+            }
         }
     }
     .homepage {  
@@ -67,12 +49,4 @@ body{
     .navbar-expand-lg .navbar-nav .nav-link {
         color:#fff;
     }
-    #navbarNav {
-        margin-top:30px;
-    }    
-}
-.homepage-image {
-    position:fixed;
-    left:0;
-    top:40px;
 }

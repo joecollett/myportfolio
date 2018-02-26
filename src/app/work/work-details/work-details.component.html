@@ -1,6 +1,20 @@
-<div *ngIf="workDetails?.image" class="workItem">
+<div class="top-container">
   <img [src]="workDetails?.image" class="workImageMain"/>
-  <h2>{{workDetails?.title}}</h2>
-  <div [innerHTML]="workDetails?.body | safeHtml"></div>
+  <div class="row">
+    <div class="col-lg-8 col-md-10">
+      <h1>{{workDetails?.title}}</h1>
+      <p class="page-description">{{workDetails?.desc}}</p>
+    </div>    
+  </div>
 </div>
-<button *ngIf="workDetails?.image" routerLink="/work">Back</button>
+<div class="work-item">
+  <div class="row justify-content-center">
+      <div class="col-lg-10 col-md-12">
+          <div *ngIf="workDetails?.image">
+              <div [innerHTML]="workDetails?.body | safeHtml"></div>
+            </div>
+            <button *ngIf="workDetails?.image" routerLink="/portfolio">Back</button>
+      </div>
+    </div>
+</div>
+

@@ -29,6 +29,8 @@ import { OrderModule } from 'ngx-order-pipe';
 import { ReversePipe } from './pipes/reverse.pipe';
 import { NavFullComponent } from './nav-full/nav-full.component';
 import { NavComponent } from './navbar/nav/nav.component';
+import { FooterComponent } from './footer/footer.component';
+import {Ng2PageScrollModule} from 'ng2-page-scroll';
 
 
 
@@ -37,7 +39,7 @@ export const routes: Routes = [
   { path: 'home', component: HomeComponent},
   { path: 'upload', component: UploadFormComponent, canActivate: [AuthGuard]},    
   { path: 'edit', component: EditComponent, canActivate: [AuthGuard]},
-  { path: 'work', component: WorkComponent},
+  { path: 'portfolio', component: WorkComponent},
   { path: 'login', component: LoginComponent},
   { path: 'work/:id', component: WorkDetailsComponent},
   { path: 'edit/:id', component: WorkItemComponent, canActivate: [AuthGuard]},
@@ -59,6 +61,7 @@ export const routes: Routes = [
     ReversePipe,
     NavFullComponent,
     NavComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -70,7 +73,8 @@ export const routes: Routes = [
     BrowserAnimationsModule,
     CKEditorModule,
     ToastModule.forRoot(),
-    OrderModule
+    OrderModule,
+    Ng2PageScrollModule
   ],
   providers: [
     ConvertUrlService,

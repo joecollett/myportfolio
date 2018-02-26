@@ -74,7 +74,7 @@ export class WorkItemComponent implements OnInit {
     this.selectedCaptionImg = event.target.files;
   }    
 
-  saveValue(name, html, image, captionimage, caption, color){
+  saveValue(name, html, image, captionimage, caption, color, description){
     this.showSpinner = true;
     if(!this.imageurl){
       this.image = {
@@ -104,6 +104,7 @@ export class WorkItemComponent implements OnInit {
         title: name, 
         body: html, 
         caption: caption,
+        desc: description,
         image: this.image.url,
         captionImg: this.captionimage.url,
         backgroundcolor: color

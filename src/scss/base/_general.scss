@@ -5,22 +5,33 @@ body {
     color:#333;
 }
 h1 {
-    font-size:5rem;
-    letter-spacing:3px;
-    margin-top:20vh;
-    font-weight:400;
-    margin-bottom:20px;
-    @media(min-width: $screen-lg) {
-        font-size:3rem;
-        margin-top:10vh;
-    }
+    margin-top: 300px;
+    font-size: 1.5rem;
+    color: #fff;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-weight: 100;
 }
-p {
-    color:$homepage-p-color;
-    font-size:2rem;
-    font-weight:100;
-    line-height:2.2rem;    
-    word-spacing:2px;
+h2 {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+hr {
+    margin-top:3rem;
+    margin-bottom:3rem;
+}
+p.page-description {
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 100;
+    line-height: 3.5rem;
+    word-spacing: 0px;
+    letter-spacing: 1px;
+    font-weight: 500;
 }
 a.nav-link {
     color:#333;
@@ -30,6 +41,22 @@ img {
 }
 .d-flex-1 {
     flex:1;
+}
+p, .value, .label {
+    color:#363636;
+    font-weight:300;
+    font-size:1.1rem;  
+    word-spacing:3px;
+    line-height:1.8rem;
+}
+.label {
+    font-weight:bold;
+    letter-spacing: 2px;
+    word-spacing:3px;
+    text-transform: uppercase;
+}
+.value, .label {
+    margin-bottom:15px;
 }
 .muted-background {
     background:#eee;
@@ -41,29 +68,51 @@ img {
     background-size:cover;
     padding-left:0px;
     padding-right:0px;      
-    min-height: calc(100vh - 30px);
+    min-height: 650px;
     margin-top: 15px;
     margin-bottom: 15px;     
+    position:relative;
 }
+.outer-container {
+    @media(min-width: $screen-lg){
+        min-height: 500px;  
+        margin-top: 15px;
+        margin-bottom: 15px;          
+        display: flex;
+        flex-direction: column;   
+        background-size:cover;
+        background-position: top left;         
+        background-size:cover;   
+    }
+}   
 .top-container {
     height: 650px;
     background: #333;
-    margin-top: -83px;
-    margin-left: -60px;
-    margin-right: -60px;
-    padding-left:60px;
-    padding-right:60px;
-    padding-top: 83px; 
-    // height:calc(100vh - 30px);
+    padding:0 75px;
 }
-h1 {
-    font-size:2.4rem;
-    letter-spacing:3px;
-    margin-top:20vh;
-    font-weight:400;
-    color:#fff;
-    @media(min-width: $screen-lg) {
-        font-size:3rem;
-        margin-top:10vh;
+.btn {
+    color: #363636;
+    background: transparent;
+    border-color: #363636;
+    padding: 13px 25px;
+    border-radius: 0;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    transition:0.5s;
+    border:2px solid #363636;
+    font-weight:bold;
+    svg {
+        margin-top:-10px;
+        transition:0.5s;
+    }
+    &:hover, &:focus {
+        background:#363636;
+        transition:0.5s;
+        cursor:pointer;
+        border-color: #363636;
+        svg {
+            stroke:#fff;
+            transition:0.5s;
+        }
     }
 }

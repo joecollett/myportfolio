@@ -1,5 +1,6 @@
 <h1>Edit Work - {{workDetails.title}}</h1>
 <input [(ngModel)]="workDetails.title" name="title" class="form-control" />
+<input [(ngModel)]="workDetails.desc" name="title" class="form-control" />
 <input [(ngModel)]="workDetails.caption" class="form-control" />
 <input [(ngModel)]="workDetails.backgroundcolor" class="form-control" />
 <h2>Current Image</h2>
@@ -22,5 +23,5 @@
 [config]="{uiColor: '#99000'}"
 >
 </ckeditor> 
-<button (click)="saveValue(workDetails.title, workDetails.body, currentUpload, captionUpload, workDetails.caption, workDetails.backgroundcolor)" class="btn btn-primary">Press me</button> 
+<button (click)="saveValue(workDetails.title, workDetails.body, currentUpload, captionUpload, workDetails.caption, workDetails.backgroundcolor, workDetails.desc)" class="btn btn-primary">Press me</button> 
 <app-loading-spinner *ngIf="showSpinner"></app-loading-spinner> 

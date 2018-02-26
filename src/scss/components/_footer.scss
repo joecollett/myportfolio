@@ -1,0 +1,39 @@
+footer {
+    background:#191919;
+    margin:0 15px;
+    min-height: 100px;
+    color:darken(#fff, 30%) !important;
+    margin-bottom:15px;
+    padding:0 30px;
+    p {
+        margin-bottom:0px;
+        font-weight:100;
+        letter-spacing:1px;
+    }
+    .footer-social-media-container {
+        display:flex;
+        align-items:center;
+        a { 
+            color:darken(#fff, 50%);    
+            svg {
+                margin-right:20px;
+            }                
+            &:last-child {
+                margin-left:10px;
+                svg {
+                    margin-right:0px;
+                }
+            }
+            &.back-to-top {
+                background:#000;
+                width: 35px;
+                height: 35px;
+                font-size: 12px;
+                display: flex;
+                justify-content: center;
+                align-content: center;
+                align-items: center;                
+            }
+        }
+    }
+}

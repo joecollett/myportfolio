@@ -1,3 +1,10 @@
+.navbar {
+    position: absolute;
+    width: auto;
+    right: 60px;
+    left: 60px;
+    top: 20px;
+}
 .navbar-brand {
     z-index: 1;    
     img {
@@ -17,10 +24,10 @@
 .navbar-expand-lg .navbar-nav .nav-link{
     padding-right: 1.25rem;
     padding-left: 1.25rem;
-    letter-spacing: 1px;
-    font-weight:300;
+    letter-spacing: 2px;
+    font-weight: 300;
     text-transform: uppercase;
-    font-size:0.9rem;
+    font-size: 0.8rem;
     color:#333;
 }
 .navbar-brand img {

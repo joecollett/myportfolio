@@ -26,6 +26,7 @@ export class EditComponent implements OnInit {
   caption:any;  
   workRef:AngularFireList<any>;
   workValue:any;
+  workValueDescription:any;
   workItems:Observable<any>;
   selectedFiles: FileList;
   captionImage: FileList;
@@ -65,7 +66,7 @@ export class EditComponent implements OnInit {
   detectCaptionImage(event) {
     this.captionImage = event.target.files;
   }     
-  addWork(work, body, image, caption, color){
+  addWork(work, body, image, caption, color, description){
     var workId = work.replace(/[^a-z0-9]/gi,'').toLowerCase();
     let file = this.selectedFiles.item(0);
     let captionImg = this.captionImage.item(0);
@@ -77,6 +78,7 @@ export class EditComponent implements OnInit {
     setTimeout(()=>{   
       this.workRef.set(workId, {
         title: work,
+        desc: description,
         caption: caption,
         body: body,
         id: workId,
