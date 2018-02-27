@@ -20,6 +20,12 @@ h2 {
     margin-bottom: 30px;
     font-weight: 600;
 }
+h4 {
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    letter-spacing: 3px;
+    font-weight: 400;
+}
 hr {
     margin-top:3rem;
     margin-bottom:3rem;
@@ -115,4 +121,7 @@ p, .value, .label {
             transition:0.5s;
         }
     }
+}
+.max-height-700 {
+    max-height:700px;
 }
