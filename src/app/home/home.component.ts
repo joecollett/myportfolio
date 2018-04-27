@@ -7,9 +7,7 @@ import { fadeInAnimation } from '../animations/index';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
-  animations: [fadeInAnimation],
-  host: { '[@fadeInAnimation]': '' }  
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
   home:any;
@@ -25,7 +23,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    
+    document.getElementById('body').classList.add("home");
   }
 
 }

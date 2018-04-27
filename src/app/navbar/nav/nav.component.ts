@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { AuthService } from './../../service/auth.service';
 import { Router } from '@angular/router';
 import * as firebase from 'firebase/app';
@@ -8,13 +8,16 @@ import * as firebase from 'firebase/app';
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.scss']
 })
-export class NavComponent implements OnInit {
-
+export class NavComponent {
+  @Output() newStatus = new EventEmitter<boolean>();
+  status = false;
   constructor(public authService: AuthService, private router: Router) {
     
   }
 
-  ngOnInit() {
+  closeNav(status: boolean){
+    status = false;
+    this.newStatus.emit(status);
   }
 
 }

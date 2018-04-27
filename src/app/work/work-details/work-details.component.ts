@@ -8,9 +8,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-work-details',
   templateUrl: './work-details.component.html',
-  styleUrls: ['./work-details.component.scss'],
-  animations: [fadeInAnimation],
-  host: { '[@fadeInAnimation]': '' }       
+  styleUrls: ['./work-details.component.scss'],   
 })
 export class WorkDetailsComponent implements OnInit {
   name = '';

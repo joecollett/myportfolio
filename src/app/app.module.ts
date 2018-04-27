@@ -1,5 +1,6 @@
 import { environment } from './../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
@@ -31,6 +32,8 @@ import { NavFullComponent } from './nav-full/nav-full.component';
 import { NavComponent } from './navbar/nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 import {Ng2PageScrollModule} from 'ng2-page-scroll';
+import { ContactComponent } from './contact/contact.component';
+import { AboutComponent } from './about/about.component';
 
 
 
@@ -41,8 +44,11 @@ export const routes: Routes = [
   { path: 'edit', component: EditComponent, canActivate: [AuthGuard]},
   { path: 'portfolio', component: WorkComponent},
   { path: 'login', component: LoginComponent},
+  { path: 'contact', component: ContactComponent},
+  { path: 'about', component: AboutComponent},
   { path: 'work/:id', component: WorkDetailsComponent},
   { path: 'edit/:id', component: WorkItemComponent, canActivate: [AuthGuard]},
+  { path: '**', component: HomeComponent }
 ];
 
 @NgModule({
@@ -62,6 +68,8 @@ export const routes: Routes = [
     NavFullComponent,
     NavComponent,
     FooterComponent,
+    ContactComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
@@ -74,7 +82,8 @@ export const routes: Routes = [
     CKEditorModule,
     ToastModule.forRoot(),
     OrderModule,
-    Ng2PageScrollModule
+    Ng2PageScrollModule,
+    ReactiveFormsModule
   ],
   providers: [
     ConvertUrlService,

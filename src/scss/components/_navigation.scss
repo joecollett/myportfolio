@@ -1,9 +1,16 @@
 .navbar {
     position: absolute;
     width: auto;
-    right: 60px;
-    left: 60px;
-    top: 20px;
+    left:0px;
+    right:0px;
+    @media(min-width:$screen-lg){
+        right: 60px;
+        left: 60px;
+        top: 20px;        
+    }
+}
+.navbar-expand-lg .navbar-nav .nav-link {
+    color:#fff;
 }
 .navbar-brand {
     z-index: 1;    

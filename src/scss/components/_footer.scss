@@ -1,14 +1,20 @@
 footer {
     background:#191919;
-    margin:0 15px;
     min-height: 100px;
     color:darken(#fff, 30%) !important;
-    margin-bottom:15px;
-    padding:0 30px;
+    padding:40px 30px;
+    @media(min-width: $screen-lg){
+        margin:0 15px;
+        margin-bottom:15px;
+    }
     p {
-        margin-bottom:0px;
+        margin-bottom:15px;
         font-weight:100;
         letter-spacing:1px;
+        color:#b3b2b2 !important;
+        @media(min-width: $screen-lg){
+            margin-bottom:0px;
+        }        
     }
     .footer-social-media-container {
         display:flex;

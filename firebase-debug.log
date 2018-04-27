@@ -1,0 +1,196 @@
+[debug] [2018-04-27T09:43:03.867Z] ----------------------------------------------------------------------
+[debug] [2018-04-27T09:43:03.870Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2018-04-27T09:43:03.870Z] CLI Version:   3.17.4
+[debug] [2018-04-27T09:43:03.870Z] Platform:      darwin
+[debug] [2018-04-27T09:43:03.870Z] Node Version:  v8.4.0
+[debug] [2018-04-27T09:43:03.871Z] Time:          Fri Apr 27 2018 10:43:03 GMT+0100 (BST)
+[debug] [2018-04-27T09:43:03.871Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-04-27T09:43:03.886Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-04-27T09:43:03.886Z] > authorizing via signed-in user
+[debug] [2018-04-27T09:43:03.889Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/joecollett-c2ff6  
+  
+ Fri Apr 27 2018 10:43:03 GMT+0100 (BST)
+[debug] [2018-04-27T09:43:04.639Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-27T09:43:04.640Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/joecollett-c2ff6/tokens  
+  
+ Fri Apr 27 2018 10:43:04 GMT+0100 (BST)
+[debug] [2018-04-27T09:43:05.249Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'joecollett-c2ff6'...
+[info] 
+[info] i  deploying database, functions, hosting
+[info] Running command: npm --prefix $RESOURCE_DIR run build
+[info] ✔  functions: Finished running predeploy script.
+[info] i  database: checking rules syntax...
+[debug] [2018-04-27T09:43:10.684Z] >>> HTTP REQUEST PUT https://joecollett-c2ff6.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  "rules": {
+    ".read": true,
+    ".write": "auth != null",
+    "messages": {
+      ".write": true
+    }    
+  }
+} 
+ Fri Apr 27 2018 10:43:10 GMT+0100 (BST)
+[debug] [2018-04-27T09:43:11.414Z] <<< HTTP RESPONSE 200
+[info] ✔  database: rules syntax for database joecollett-c2ff6 is valid
+[debug] [2018-04-27T09:43:11.416Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "./node_modules/.bin/tslint -p tslint.json",
+    "build": "./node_modules/.bin/tsc",
+    "serve": "npm run build && firebase serve --only functions",
+    "shell": "npm run build && firebase experimental:functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "~5.8.1",
+    "firebase-functions": "^0.8.1",
+    "nodemailer": "^4.6.0"
+  },
+  "devDependencies": {
+    "tslint": "^5.8.0",
+    "typescript": "^2.5.3"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2018-04-27T09:43:11.419Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/joecollett-c2ff6?view=CONSUMER_VIEW  
+  
+ Fri Apr 27 2018 10:43:11 GMT+0100 (BST)
+[debug] [2018-04-27T09:43:11.419Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/joecollett-c2ff6?view=CONSUMER_VIEW  
+  
+ Fri Apr 27 2018 10:43:11 GMT+0100 (BST)
+[debug] [2018-04-27T09:43:12.686Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-27T09:43:12.717Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: all necessary APIs are enabled
+[debug] [2018-04-27T09:43:12.718Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/joecollett-c2ff6  
+  
+ Fri Apr 27 2018 10:43:12 GMT+0100 (BST)
+[debug] [2018-04-27T09:43:12.719Z] >>> HTTP REQUEST GET https://apikeys.googleapis.com/v1/projects/joecollett-c2ff6/apiKeys  
+  
+ Fri Apr 27 2018 10:43:12 GMT+0100 (BST)
+[debug] [2018-04-27T09:43:13.995Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-27T09:43:14.336Z] <<< HTTP RESPONSE 200
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2018-04-27T09:43:14.340Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/joecollett-c2ff6/configs  
+  
+ Fri Apr 27 2018 10:43:14 GMT+0100 (BST)
+[debug] [2018-04-27T09:43:15.151Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-27T09:43:15.152Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/joecollett-c2ff6/configs/gmail/variables  
+  
+ Fri Apr 27 2018 10:43:15 GMT+0100 (BST)
+[debug] [2018-04-27T09:43:15.818Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-27T09:43:15.818Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/joecollett-c2ff6/configs/gmail/variables/email  
+  
+ Fri Apr 27 2018 10:43:15 GMT+0100 (BST)
+[debug] [2018-04-27T09:43:15.819Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/joecollett-c2ff6/configs/gmail/variables/password  
+  
+ Fri Apr 27 2018 10:43:15 GMT+0100 (BST)
+[debug] [2018-04-27T09:43:16.102Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-27T09:43:16.946Z] <<< HTTP RESPONSE 200
+[info] i  functions: packaged functions (36.42 KB) for uploading
+[debug] [2018-04-27T09:43:18.204Z] >>> HTTP REQUEST GET https://www.googleapis.com/storage/v1/b/staging.joecollett-c2ff6.appspot.com  
+  
+ Fri Apr 27 2018 10:43:18 GMT+0100 (BST)
+[debug] [2018-04-27T09:43:18.610Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-27T09:43:18.612Z] >>> HTTP REQUEST POST https://www.googleapis.com/upload/storage/v1/b/staging.joecollett-c2ff6.appspot.com/o?uploadType=media&name=firebase-functions-source  
+ ReadStream {
+  _readableState: 
+   ReadableState {
+     objectMode: false,
+     highWaterMark: 65536,
+     buffer: BufferList { head: [Object], tail: [Object], length: 1 },
+     length: 37295,
+     pipes: null,
+     pipesCount: 0,
+     flowing: null,
+     ended: true,
+     endEmitted: false,
+     reading: false,
+     sync: false,
+     needReadable: false,
+     emittedReadable: true,
+     readableListening: false,
+     resumeScheduled: false,
+     destroyed: false,
+     defaultEncoding: 'utf8',
+     awaitDrain: 0,
+     readingMore: false,
+     decoder: null,
+     encoding: null },
+  readable: true,
+  domain: null,
+  _events: { end: [Function] },
+  _eventsCount: 1,
+  _maxListeners: undefined,
+  path: '/var/folders/xf/cr22hfkx4417mpn9_bty5z_c0000gn/T/firebase-functions-78297OCWaBTwaFGOm.zip',
+  fd: 19,
+  flags: 'r',
+  mode: 438,
+  start: undefined,
+  end: undefined,
+  autoClose: true,
+  pos: undefined,
+  bytesRead: 37295 } 
+ Fri Apr 27 2018 10:43:18 GMT+0100 (BST)
+[debug] [2018-04-27T09:43:19.756Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: functions folder uploaded successfully
+[info] i  hosting: preparing dist directory for upload...
+[debug] [2018-04-27T09:43:19.845Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/joecollett-c2ff6/uploads/-LB5U2Wxzw3ZMcGuddcb?fileCount=8&message=  
+  
+ Fri Apr 27 2018 10:43:19 GMT+0100 (BST)
+[debug] [2018-04-27T09:43:23.478Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-27T09:43:23.478Z] [hosting] .tgz uploaded successfully, waiting for extraction
+[info] ✔  hosting: 8 files uploaded successfully
+[info] i  database: releasing rules...
+[debug] [2018-04-27T09:43:24.746Z] >>> HTTP REQUEST PUT https://joecollett-c2ff6.firebaseio.com/.settings/rules.json  
+ {
+  "rules": {
+    ".read": true,
+    ".write": "auth != null",
+    "messages": {
+      ".write": true
+    }    
+  }
+} 
+ Fri Apr 27 2018 10:43:24 GMT+0100 (BST)
+[debug] [2018-04-27T09:43:25.347Z] <<< HTTP RESPONSE 200
+[info] ✔  database: rules for database joecollett-c2ff6 released successfully
+[debug] [2018-04-27T09:43:25.349Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/joecollett-c2ff6/locations/us-central1/functions  
+  
+ Fri Apr 27 2018 10:43:25 GMT+0100 (BST)
+[debug] [2018-04-27T09:43:25.806Z] <<< HTTP RESPONSE 200
+[info] i  functions: updating function sendContactMessage...
+[debug] [2018-04-27T09:43:25.808Z] Trigger is:  {"eventTrigger":{"resource":"projects/_/instances/joecollett-c2ff6/refs/messages/{pushKey}","eventType":"providers/google.firebase.database/eventTypes/ref.write"}}
+[debug] [2018-04-27T09:43:25.810Z] >>> HTTP REQUEST PATCH https://cloudfunctions.googleapis.com/v1/projects/joecollett-c2ff6/locations/us-central1/functions/sendContactMessage 
+query params: {"updateMask":"sourceArchiveUrl,name,labels,eventTrigger.resource,eventTrigger.eventType"} 
+ { sourceArchiveUrl: 'gs://staging.joecollett-c2ff6.appspot.com/firebase-functions-source',
+  name: 'projects/joecollett-c2ff6/locations/us-central1/functions/sendContactMessage',
+  labels: { 'deployment-tool': 'cli-firebase' },
+  eventTrigger: 
+   { resource: 'projects/_/instances/joecollett-c2ff6/refs/messages/{pushKey}',
+     eventType: 'providers/google.firebase.database/eventTypes/ref.write' } } 
+ Fri Apr 27 2018 10:43:25 GMT+0100 (BST)
+[debug] [2018-04-27T09:43:26.286Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-27T09:43:26.289Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9lY29sbGV0dC1jMmZmNi91cy1jZW50cmFsMS9zZW5kQ29udGFjdE1lc3NhZ2Uva29EYmthTFZJd3M  
+  
+ Fri Apr 27 2018 10:43:26 GMT+0100 (BST)
+[debug] [2018-04-27T09:43:26.603Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-27T09:43:28.604Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9lY29sbGV0dC1jMmZmNi91cy1jZW50cmFsMS9zZW5kQ29udGFjdE1lc3NhZ2Uva29EYmthTFZJd3M  
+  
+ Fri Apr 27 2018 10:43:28 GMT+0100 (BST)
+[debug] [2018-04-27T09:43:28.954Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-27T09:43:30.956Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9lY29sbGV0dC1jMmZmNi91cy1jZW50cmFsMS9zZW5kQ29udGFjdE1lc3NhZ2Uva29EYmthTFZJd3M  
+  
+ Fri Apr 27 2018 10:43:30 GMT+0100 (BST)
+[debug] [2018-04-27T09:43:31.447Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-27T09:43:33.449Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9lY29sbGV0dC1jMmZmNi91cy1jZW50cmFsMS9zZW5kQ29udGFjdE1lc3NhZ2Uva29EYmthTFZJd3M  
+  
+ Fri Apr 27 2018 10:43:33 GMT+0100 (BST)
+[debug] [2018-04-27T09:43:33.871Z] <<< HTTP RESPONSE 200

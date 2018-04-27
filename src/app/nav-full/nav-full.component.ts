@@ -26,5 +26,8 @@ export class NavFullComponent implements OnInit {
       document.getElementById("myNav").style.width = "0%";
     }
   }
-
+  newStatus(status: boolean){
+    this.status = status;
+    this.checkStatus(status);
+  }
 }

@@ -1,44 +1,39 @@
 import { Component, Renderer2 } from '@angular/core';
 import { query, trigger, state, animate, transition, style } from '@angular/animations';
-import { Router, NavigationStart } from '@angular/router';
-
-const fadeIn = [
-  query(':leave', style({ position: 'absolute', left: 0, right: 0, opacity: 1 })),
-  query(':enter', style({ position: 'absolute', left: 0, right: 0, opacity: 0 })),
-  query(':leave', animate('1s', style({ opacity: 0 }))),
-  query(':enter', animate('1s', style({ opacity: 1 })))
-]
+import { Router, NavigationStart, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'], 
-  /* Allow CSS in this component to cascade down to child components */
-  animations: [
-    trigger('routerAnimations', [
-      transition('* => *', fadeIn)
-    ])
-  ]  
 })
 
 export class AppComponent {
   previousUrl: string;
-  
+  loading = true;
    constructor(private renderer: Renderer2, private router: Router) {
      this.router.events
        .subscribe((event) => {
-        setTimeout(()=>{  
-         if (event instanceof NavigationStart) {
-           if (this.previousUrl) {
-             this.renderer.removeClass(document.body, this.previousUrl);
-           }
-           let currentUrlSlug = event.url.slice(1)
-           if (currentUrlSlug) {
-             this.renderer.addClass(document.body, currentUrlSlug);
-           }
-           this.previousUrl = currentUrlSlug;
-         }
-        },400)
+        if (event instanceof NavigationStart) {
+          this.loading = true;
+          if (this.previousUrl) {
+            this.renderer.removeClass(document.body, this.previousUrl);
+          }
+          let currentUrlSlug = event.url.slice(1)
+          if (currentUrlSlug) {
+            this.renderer.addClass(document.body, currentUrlSlug);
+            if(currentUrlSlug !== "home"){
+              this.renderer.removeClass(document.body, "home");
+            }
+          }
+          this.previousUrl = currentUrlSlug;
+        }
+        if (event instanceof NavigationEnd) {
+          document.body.scrollTop = document.documentElement.scrollTop = 0;
+          setTimeout(()=>{   
+            this.loading = false;
+           },1500);
+        }        
        });
    }  
   prepareRouteTransition(outlet) {

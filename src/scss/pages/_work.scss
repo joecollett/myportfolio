@@ -1,3 +1,12 @@
+.work-grids {
+  .work-container:last-child {
+      margin-bottom:60px;
+      hr {
+          display:none;
+      }
+  }
+}
+
 .work-page-container {
   .workImageContainer {
     position:relative;
@@ -19,15 +28,23 @@
     }  
   }
   .work-image{
-    max-width:650px;
-    max-height:300px;
+    max-width:100%;
+    max-height:400px;
+    @media(min-width:$screen-md){
+      max-width:650px;
+      max-height:300px;      
+      padding-right:20px;
+    }
   }  
   h3.workTitle {
     font-size: 2.3rem;
     color: #363636;
     margin-bottom:20px;
-    margin-top:0px;
+    margin-top:20px;
     padding:0;
+    @media(min-width: $screen-lg){
+      margin-top:0px;
+    }
     &:hover {
       text-decoration: none;
     }
@@ -63,7 +80,9 @@
   }
 }
 .work-details-container {
-  margin-left:40px;
+  @media(min-width:$screen-lg){
+    margin-left:40px;
+  }
   .btn {
     margin-top:25px;
   }

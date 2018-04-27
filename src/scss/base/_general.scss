@@ -3,15 +3,56 @@ body {
     font-family: 'Mada', sans-serif;
     background-size:cover;
     color:#333;
+    &.contact {
+        .top-container {
+            background:url("https://firebasestorage.googleapis.com/v0/b/joecollett-c2ff6.appspot.com/o/uploads%2Fcontact.jpg?alt=media&token=fbc9a55c-fe17-4d99-ad91-827c30733a42");
+        }
+        .social-media-container {
+            a {
+                color: lighten(#333, 10%);
+                font-size: 1.2rem;
+                margin-right: 12px;    
+            }
+        }    
+    }
+    &.about {
+        .top-container {
+            background:url("https://firebasestorage.googleapis.com/v0/b/joecollett-c2ff6.appspot.com/o/uploads%2Faboutme.jpg?alt=media&token=b8c0d9d5-4e04-42a4-81a1-7d723e675abc")
+        }
+    }
+}
+[type=reset], [type=submit], button, html [type=button] {
+    -webkit-appearance: none;
+}
+button, .btn {
+    -webkit-appearance: none;
+    -moz-appearance: none;    
+}
+.btn.btn-back {
+    padding-left:10px;
+    svg {
+        padding-right:10px;
+    }
+}
+.container-fluid {
+    padding:0;
+    @media(min-width:$screen-lg){
+        padding:0 15px;
+    }
 }
 h1 {
     margin-top: 300px;
-    font-size: 1.5rem;
     color: #fff;
+    font-size:1rem;
     letter-spacing: 6px;
     text-transform: uppercase;
     margin-bottom: 10px;
     font-weight: 100;
+    text-align: center;
+    @media(min-width:$screen-lg){
+        text-align: left;
+        font-size: 1.5rem;
+    }
 }
 h2 {
     border-bottom: 1px solid #ddd;
@@ -38,6 +79,10 @@ p.page-description {
     word-spacing: 0px;
     letter-spacing: 1px;
     font-weight: 500;
+    text-align: center;
+    @media(min-width:$screen-lg){
+        text-align: left;
+    }    
 }
 a.nav-link {
     color:#333;
@@ -48,12 +93,21 @@ img {
 .d-flex-1 {
     flex:1;
 }
-p, .value, .label {
+p, .value, .label, label {
     color:#363636;
     font-weight:300;
     font-size:1.1rem;  
     word-spacing:3px;
     line-height:1.8rem;
+}
+a {
+    font-weight:300;
+    font-size:1.1rem;  
+    word-spacing:3px;
+    line-height:1.8rem;    
+}
+label {
+    font-weight:400;
 }
 .label {
     font-weight:bold;
@@ -75,26 +129,33 @@ p, .value, .label {
     padding-left:0px;
     padding-right:0px;      
     min-height: 650px;
-    margin-top: 15px;
-    margin-bottom: 15px;     
     position:relative;
-}
-.outer-container {
+    display: flex;
+    flex-direction: column;   
+    background-size:cover;
+    background-position: top left;         
+    background-size:cover;       
     @media(min-width: $screen-lg){
         min-height: 500px;  
         margin-top: 15px;
         margin-bottom: 15px;          
-        display: flex;
-        flex-direction: column;   
-        background-size:cover;
-        background-position: top left;         
-        background-size:cover;   
-    }
-}   
+    }    
+}
 .top-container {
     height: 650px;
     background: #333;
-    padding:0 75px;
+    background-size:cover !important;
+    @media(min-width:$screen-lg){
+        padding:0 75px;        
+    }
+}
+.row-no-margin {
+    margin:0;
+}
+.row-margin-lg {
+    @media(min-width:$screen-lg){
+        margin:0 -15px;
+    }
 }
 .btn {
     color: #363636;
@@ -121,7 +182,22 @@ p, .value, .label {
             transition:0.5s;
         }
     }
+    &:disabled {
+        background:transparent;
+        color: darken(#eee, 20%);
+        border-color: darken(#eee, 20%);
+        cursor: not-allowed;
+        svg  {
+            stroke: darken(#eee, 20%);
+        }
+    }
 }
 .max-height-700 {
     max-height:700px;
+}
+.form-control {
+    border-radius:0px;
+}
+textarea {
+    height:100px;
 }

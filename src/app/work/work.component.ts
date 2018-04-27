@@ -8,8 +8,6 @@ import * as _ from 'lodash'
   selector: 'app-work',
   templateUrl: './work.component.html',
   styleUrls: ['./work.component.scss'],
-  animations: [fadeInAnimation],
-  host: { '[@fadeInAnimation]': '' }  ,
 })
 export class WorkComponent implements OnInit {
   workItems:Observable<any>;
