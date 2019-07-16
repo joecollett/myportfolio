@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { AngularFireDatabase, AngularFireObject, AngularFireList } from 'angularfire2/database';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { fadeInAnimation } from '../../animations/index';
 import { FormsModule } from '@angular/forms';
@@ -8,7 +8,7 @@ import { UploadService } from '../../uploads/shared/upload.service';
 import { Upload } from '../../uploads/shared/upload';
 import * as _ from "lodash";
 import * as firebase from 'firebase';
-import { ToastsManager } from 'ng2-toastr/ng2-toastr';
+import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router'
 
 @Component({
@@ -37,15 +37,14 @@ export class WorkItemComponent implements OnInit {
   showSpinner: boolean = false;
   captionImgUpload;
 
-  constructor(private router: Router, public upSvc: UploadService, private route: ActivatedRoute, public db: AngularFireDatabase, public toastr: ToastsManager, vcr: ViewContainerRef) { 
+  constructor(private router: Router, public upSvc: UploadService, private route: ActivatedRoute, public db: AngularFireDatabase, private toastr: ToastrService, vcr: ViewContainerRef) { 
     this.url = '/work/' + this.route.snapshot.params.id;
     const workDetailsRef = db.object<any>(this.url);
     this.item = db.object<any>(this.url);
     this.workDetails = workDetailsRef.valueChanges().subscribe(
       workDetails => this.workDetails = workDetails
     );      
-    this.workDetails = workDetailsRef
-    this.toastr.setRootViewContainerRef(vcr);
+    this.workDetails = workDetailsRef;
   }
 
   detectFiles(event) {

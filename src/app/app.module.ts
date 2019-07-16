@@ -25,7 +25,7 @@ import { CKEditorModule } from 'ng2-ckeditor';
 import { UploadService } from './uploads/shared/upload.service';
 import { SafeHtmlPipe } from './pipes/safe-html-pipe.pipe';
 import { LoadingSpinnerComponent } from './ui/loading-spinner/loading-spinner.component';
-import { ToastModule } from 'ng2-toastr/ng2-toastr';
+import { ToastrModule } from 'ngx-toastr';
 import { OrderModule } from 'ngx-order-pipe';
 import { ReversePipe } from './pipes/reverse.pipe';
 import { NavFullComponent } from './nav-full/nav-full.component';
@@ -80,7 +80,7 @@ export const routes: Routes = [
     RouterModule.forRoot(routes),
     BrowserAnimationsModule,
     CKEditorModule,
-    ToastModule.forRoot(),
+    ToastrModule.forRoot(), 
     OrderModule,
     Ng2PageScrollModule,
     ReactiveFormsModule

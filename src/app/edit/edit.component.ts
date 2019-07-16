@@ -1,13 +1,13 @@
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { AngularFireDatabase, AngularFireObject, AngularFireList } from 'angularfire2/database';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { fadeInAnimation } from '../animations/index';
 import { ConvertUrlService } from '../service/convert-url.service';
 import { UploadService } from '../uploads/shared/upload.service';
 import { Upload } from '../uploads/shared/upload';
 import * as _ from "lodash";
 import * as firebase from 'firebase';
-import { ToastsManager } from 'ng2-toastr/ng2-toastr';
+import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router'
 
 @Component({
@@ -42,7 +42,7 @@ export class EditComponent implements OnInit {
   
 
 
-  constructor(public db: AngularFireDatabase, private upSvc: UploadService, private router: Router, public toastr: ToastsManager, vcr: ViewContainerRef) {
+  constructor(public db: AngularFireDatabase, private upSvc: UploadService, private router: Router, private toastr: ToastrService, vcr: ViewContainerRef) {
     const homeRef = db.object<any>('home');
     const workRef = db.list<any>('work');
     this.content = '<p>Hello <strong>World !</strong></p>'
@@ -55,7 +55,6 @@ export class EditComponent implements OnInit {
     this.homeRef = homeRef;
     this.workRef = workRef;
     this.workItems = workRef.valueChanges();
-    this.toastr.setRootViewContainerRef(vcr);
   } 
   saveValue(name, desc){
     this.homeRef.update({title: name, description:desc})
