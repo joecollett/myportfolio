@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { fadeInAnimation } from '../animations/index';
-import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs';
 import * as _ from 'lodash'
 

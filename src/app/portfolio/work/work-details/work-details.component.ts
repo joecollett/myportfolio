@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
-import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
-import { fadeInAnimation } from '../../animations/index';
-import { FormsModule } from '@angular/forms';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 @Component({
   selector: 'app-work-details',

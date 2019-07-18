@@ -2,7 +2,7 @@ import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { AngularFireDatabase, AngularFireObject, AngularFireList } from 'angularfire2/database';
 import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
-import { fadeInAnimation } from '../../animations/index';
+import { fadeInAnimation } from '../../../shared/animations/index';
 import { FormsModule } from '@angular/forms';
 import { UploadService } from '../../uploads/shared/upload.service';
 import { Upload } from '../../uploads/shared/upload';

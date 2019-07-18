@@ -1,8 +1,7 @@
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { AngularFireDatabase, AngularFireObject, AngularFireList } from 'angularfire2/database';
 import { Observable } from 'rxjs';
-import { fadeInAnimation } from '../animations/index';
-import { ConvertUrlService } from '../service/convert-url.service';
+import { fadeInAnimation } from '../../shared/animations/index';
 import { UploadService } from '../uploads/shared/upload.service';
 import { Upload } from '../uploads/shared/upload';
 import * as _ from "lodash";
