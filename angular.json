@@ -21,8 +21,9 @@
               "src/favicon.ico"
             ],
             "styles": [
-              "src/scss/styles.scss",
-              "node_modules/ngx-toastr/toastr.css" 
+              "node_modules/ngx-toastr/toastr.css",
+              "node_modules/normalize.css/normalize.css",
+              "src/scss/styles.scss"
             ],
             "scripts": []
           },

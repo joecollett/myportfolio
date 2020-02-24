@@ -11,6 +11,8 @@ import * as _ from 'lodash'
 export class WorkComponent implements OnInit {
   workItems:Observable<any>;
   dateAdded: string = 'dateAdded';
+  title = 'Portfolio';
+  description = 'orem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum efficitur massa ut lectus ullamcorper';
   
   constructor(public db: AngularFireDatabase) { 
     const workRef = db.list<any>('work').valueChanges();
@@ -19,9 +21,6 @@ export class WorkComponent implements OnInit {
 
   ngOnInit() { 
     
-  }
-  convertUrl(input){
-    return input.replace(/[^a-z0-9]/gi,'').toLowerCase();
   }
 
 }

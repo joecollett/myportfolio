@@ -1,64 +1,38 @@
-<div class="top-container">
-  <div class="row row-no-margin row-margin-lg">
-    <div class="col-lg-8 col-md-12">
-        <h1>Contact</h1>
-        <p class="page-description">Lets have a chat</p>
-    </div>    
+<app-header [title]="'Contact'" [description]="'Drop me a message and lets have a chat'"></app-header>
+<div class="grid-columns-12-sm margin-left-xxl-sm margin-right-xxl-sm margin-top-xl-sm margin-bottom-xxl-xs margin-bottom-xxl-sm">
+  <div class="margin-right-xxl-xs padding-left-lg-xs padding-right-lg-xs" style="grid-column: 2 / span 10;">
+    <h2>Send a message</h2>
+    <p class="margin-bottom-sm">If you have any projects in mind that you’d be interested in collaborating on, or you have any other queries then don’t hesitate to get in touch by filling out the form below. I look forward to hearing from you.</p>        
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group margin-bottom-md-xs">
+        <label for="name">Your name</label>
+        <input type="text" id="name" class="form-control" formControlName="name">
+      </div>
+      <div class="form-group margin-bottom-md-xs">
+        <label for="email">Your email address</label>
+        <input type="text" class="form-control" formControlName="email">
+      </div>
+      <div class="form-group margin-bottom-lg-xs">
+        <label for="Message">Your message</label>
+        <textarea class="form-control" formControlName="message">
+          </textarea>            
+      </div>
+      <button class="btn btn-primary" type="submit" [disabled]="form.invalid">
+          Send            
+      </button>             
+    </form>
   </div>
-</div>
-<div class="row row-no-margin row-margin-lg justify-content-center margin-top-lg margin-bottom-lg">
-  <div class="col-lg-10 col-md-12">
-    <div class="row justify-content-between">
-      <div class="col-md-7">
-        <h2>Send a message</h2>
-        <p class="margin-bottom-sm">If you have any projects in mind that you’d be interested in collaborating on, or you have any other queries then don’t hesitate to get in touch by filling out the form below. I look forward to hearing from you.</p>        
-        <form [formGroup]="form" (ngSubmit)="onSubmit()">
-          <div class="form-group">
-            <label for="name">Your name*</label>
-            <input type="text" id="name" class="form-control" formControlName="name">
-          </div>
-          <div class="form-group">
-            <label for="email">Your email address *</label>
-            <input type="text" class="form-control" formControlName="email">
-          </div>
-          <div class="form-group">
-            <label for="Message">Your message *</label>
-            <textarea class="form-control" formControlName="message">
-              </textarea>            
-          </div>
-          <button class="btn btn-primary align-self-start margin-top-sm" type="submit" [disabled]="form.invalid">
-              Send        
-              <svg height="20" width="40" style="background:transparent; padding-left:10px;" stroke="#333" fill="transparent" stroke-width="1px">
-                <path d="M 0 15 L 30 15"></path> 
-                <path d="M 25 19 L 30 15"></path> 
-                <path d="M 25 11 L 30 15"></path> 
-              </svg>  
-            </button>             
-        </form>
-      </div>
-      <div class="col-md-4 margin-top-md no-margin-top-lg">
-        <div class="label">Details</div>
-        <p>Number: 07504008593</p>
-        <p>Email: me@josephcollett.co.uk</p>
-        <div class="label margin-top-sm">Resources</div>
-        <p>Below are links to helpful information and resources directly related to me. Feel free to click below to find out more.</p>
-        <a target="_blank" href="https://firebasestorage.googleapis.com/v0/b/joecollett-c2ff6.appspot.com/o/uploads%2Fcv.pdf?alt=media&token=591f7656-c861-4c05-9f8a-981c2152808c">- View CV</a>
-        <div class="label margin-top-sm">Social Media</div>
-        <div class="social-media-container">
-          <a href="https://www.facebook.com/joe.collett2" target="_blank">
-              <i class="fab fa-facebook fa-lg"></i>
-          </a>
-          <a href="https://twitter.com/joeyc_3" target="_blank">
-              <i class="fab fa-twitter fa-lg"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/joe-collett-aa69966a/" target="_blank">
-              <i class="fab fa-linkedin fa-lg"></i>          
-          </a>
-          <a href="https://www.instagram.com/joeyc_3/" target="_blank">
-              <i class="fab fa-instagram fa-lg"></i>          
-          </a>  
-        </div>     
-      </div>
+  <!-- <div class="margin-top-md-xs margin-left-xl-xs" style="grid-column: 9 / span 12;">
+    <div>
+      <h3>DETAILS</h3>
+      <p><span class="text-weight-regular">Number:</span> 07504008593</p>
+      <p><span class="text-weight-regular">Email: </span><a href="mailto:me@josephcollett.co.uk">me@josephcollett.co.uk</a></p>
+      <hr>
     </div>
-  </div>
+    <div class="padding-top-md-xs">
+      <h3>RESOURCES</h3>
+      <p>Below are links to helpful information and resources directly related to me. Feel free to click below to find out more.</p>
+      <button class="btn btn-primary" target="_blank" href="https://firebasestorage.googleapis.com/v0/b/joecollett-c2ff6.appspot.com/o/uploads%2Fcv.pdf?alt=media&token=591f7656-c861-4c05-9f8a-981c2152808c">View CV</button> 
+    </div>   
+  </div> -->
 </div>

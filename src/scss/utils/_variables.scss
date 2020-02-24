@@ -5,6 +5,11 @@ $body-home: url("https://image.shutterstock.com/z/stock-photo-laptop-with-office
 $homepage-color:#fff;
 $homepage-p-color:darken($homepage-color, 20%);
 
+$primary-color: linear-gradient(#fbb034 0%, #fd0 100%);; 
+
+$header-color: linear-gradient(#fbb034 0%, #fd0 100%);
+$header-border-color: #FFEB6C;
+
 $page-heading-color: #fff;
 $page-description-color: #fff;
 $page-description-font-size:1.5rem;
@@ -15,5 +20,15 @@ $work-title-color: $text-color;
 $caption-color: $text-color;
 $work-title-size: 1.2rem;
 
-$screen-md: 762px;
-$screen-lg: 992px;
+$breakpoints: (
+    'xs': 0px,
+    'sm': 768px,
+    'md': 992px,
+    'lg': 1200px,
+    'xl': 1450px
+);
+
+$screen-mobile: 786px;
+
+$grid: 1,2,3,4,5,6,7,8,9,10,11,12;
+$grid-gap: 1,2,3,4,5,6,7,8,9,10,11,12, 20, 30, 40, 50;

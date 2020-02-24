@@ -1,0 +1,8 @@
+.personal-image {
+    max-width:200px;
+    max-height:200px;
+    @media(min-width: $screen-mobile) {
+        max-width:auto;
+        max-height:auto;        
+    }
+}

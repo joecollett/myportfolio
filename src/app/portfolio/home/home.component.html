@@ -1,8 +1,16 @@
-<div class="top-container d-flex justify-content-lg-start justify-content-center">
-  <div class="row row-no-margin row-margin-lg">
-      <div class="col-lg-12 col-md-12">
-        <h1>Joseph Collett - UI Developer</h1>
-        <p class="page-description">Creating elegant user experiences</p>
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="intro padding-left-md-xs padding-right-md-xs padding-left-xl-md padding-right-xl-md">
+        <h1>We Build Products that Deliver Results.</h1>
+        <p *ngIf="!mobileWidth">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum efficitur massa ut lectus ullamcorper, sed cursus arcu interdum. Suspendisse vitae dui lobortis, interdum nulla </p>
+        <button class="btn-primary">View Latest Work</button>
+    </div>
+    <div class="box flex-item-xs flex-align-items-center-xs flex-justify-center-xs">
+      <img class="home-logo img-responsive" src="../../../assets/logo.png">  
+      <div class="spin-container">
+        <div class="shape">
+          <div class="bd"></div>
+        </div>
       </div>
-  </div>
+    </div>    
 </div>

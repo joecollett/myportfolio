@@ -1,0 +1,12 @@
+.mobile-menu {
+    display:block;
+    @media(min-width:765px) {
+        display:none
+    }
+}
+app-links {
+    display: none;
+    @media(min-width:765px) {
+        display:block;
+    }    
+}

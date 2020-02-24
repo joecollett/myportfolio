@@ -4,6 +4,7 @@ import { SharedModule } from '../shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { CKEditorModule } from 'ng2-ckeditor';
+import { CommonComponentsModule } from '../common/common.module';
 
 import { EditComponent } from './edit/edit.component';
 import { HomeComponent } from './home/home.component';
@@ -16,6 +17,7 @@ import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { UploadService } from './uploads/shared/upload.service';
 import { PortfolioRoutingModule } from './portfolio-routing.module';
+import { WorkTileComponent } from './work/work-tile/work-tile.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { PortfolioRoutingModule } from './portfolio-routing.module';
     UploadFormComponent,
     LoginComponent,  
     ContactComponent,
-    AboutComponent,         
+    AboutComponent,
+    WorkTileComponent,         
   ],
   providers: [
     UploadService    
@@ -39,7 +42,8 @@ import { PortfolioRoutingModule } from './portfolio-routing.module';
     FormsModule,
     CKEditorModule,
     RouterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CommonComponentsModule
   ]
 })
 export class PortfolioModule { }

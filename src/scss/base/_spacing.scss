@@ -1,29 +1,31 @@
-.margin-top-md {
-    margin-top:80px;
-}
-.margin-bottom-sm {
-    margin-bottom:40px;
-}
-.margin-top-xs {
-    margin-top:15px;
-}
-.margin-top-sm {
-    margin-top:40px;
-}
-.margin-top-lg {
-    margin-top:100px;
-}
-.margin-bottom-lg {
-    margin-bottom:100px;
-}
-.margin-bottom-sm {
-    margin-bottom:40px;
-}
-.margin-bottom-md {
-    margin-bottom:80px;
-}
-@media(min-width:$screen-lg){
-    .no-margin-top-lg {
-        margin-top:0px;
+$models: ('margin', 'padding');
+$sides: ('top', 'left', 'right', 'bottom');
+$sizes: (
+    'xs': 5px,
+    'sm': 10px,
+    'md': 15px,
+    'lg': 20px,
+    'xl': 30px,
+    'xxl': 50px,
+    'xxxl': 100px,
+);
+
+@each $name, $width in $breakpoints {
+    @media(min-width: $width) {
+        @each $sizeName, $size in $sizes {
+            @each $model in $models {
+                @each $side in $sides {
+                    .#{$model}-#{$side}-#{$sizeName}-#{$name} {
+                        #{$model}-#{$side}: #{$size};
+                    }
+                    .#{$model}-#{$side}-none-#{$name} {
+                        #{$model}-#{$side}: 0px;
+                    }   
+                    .minus-#{$model}-#{$side}-#{$sizeName}-#{$name} {
+                        #{$model}-#{$side}: -#{$size};
+                    }                                     
+                }
+            }
+        }
     }
 }

@@ -3,42 +3,39 @@ footer {
     min-height: 100px;
     color:darken(#fff, 30%) !important;
     padding:40px 30px;
-    @media(min-width: $screen-lg){
-        margin:0 15px;
-        margin-bottom:15px;
+    font-size:0.9rem;
+    letter-spacing: 2px;
+    font-weight:200;
+    a {
+        color:#fff;
+        text-decoration: none;
     }
-    p {
-        margin-bottom:15px;
-        font-weight:100;
-        letter-spacing:1px;
-        color:#b3b2b2 !important;
-        @media(min-width: $screen-lg){
-            margin-bottom:0px;
-        }        
+    .footer-links {
+        width:300px;
+        display: flex;
+        justify-content: space-between;
+        text-transform: uppercase;
     }
-    .footer-social-media-container {
-        display:flex;
-        align-items:center;
-        a { 
-            color:darken(#fff, 50%);    
-            svg {
-                margin-right:20px;
-            }                
-            &:last-child {
-                margin-left:10px;
-                svg {
-                    margin-right:0px;
+    ul {
+        display: flex;
+        margin:0;
+        padding:0;
+        list-style: none;
+        width:200px;
+        justify-content: space-between;
+        li {
+            background: $primary-color;
+            border-radius:50%;
+            height: 30px;
+            width: 30px;            
+            display: flex;            
+            justify-content: center;
+            align-items: center;            
+            a {
+                color: #000000;
+                i {
+                    font-size:7px;
                 }
-            }
-            &.back-to-top {
-                background:#000;
-                width: 35px;
-                height: 35px;
-                font-size: 12px;
-                display: flex;
-                justify-content: center;
-                align-content: center;
-                align-items: center;                
             }
         }
     }

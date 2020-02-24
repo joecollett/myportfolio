@@ -21,8 +21,7 @@ export class UploadFormComponent {
   uploadSingle() {
     let file = this.selectedFiles.item(0)
     this.currentUpload = new Upload(file);
-    this.upSvc.pushUpload(this.currentUpload)
-    console.log(this.currentUpload.progress)
+    this.upSvc.pushUpload(this.currentUpload);
     setTimeout(()=> {
       this.returnUrl = "<div>" + this.currentUpload.url + "</div>";
     },7000)

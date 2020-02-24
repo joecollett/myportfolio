@@ -1,0 +1,36 @@
+h1 {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    @media(min-width: $screen-mobile) {
+        font-size:2rem;
+    }
+}
+h2 {
+    font-size:1.8rem;
+    letter-spacing: 2px;
+}
+h3 {
+    font-size:1.1rem;
+    letter-spacing: 2px;
+}
+.text-weight-light {
+    font-weight: 100;
+}
+.text-weight-regular {
+    font-weight: 400;
+}
+.text-weight-bold {
+    font-weight: bold;
+}
+main {
+    p, .value, .label, label {
+        font-weight: 300;
+        font-size: 1.1rem;
+        word-spacing: 3px;
+        line-height: 1.8rem;
+    }
+    label {
+        font-weight:400;
+        margin-bottom:5px;
+    }
+}

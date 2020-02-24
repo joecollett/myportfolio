@@ -24,9 +24,11 @@ export class UploadService {
       },
       () => {
         // upload success
-        upload.url = uploadTask.snapshot.downloadURL
         upload.name = upload.file.name
-        this.saveFileData(upload)
+        uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+          upload.url = downloadURL;
+          this.saveFileData(upload);
+        });
       }
     );
   }

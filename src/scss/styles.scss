@@ -1,22 +1,31 @@
 /******* VENDORS *******/
 
-@import url("https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css");
-@import url('https://fonts.googleapis.com/css?family=Mada:100,200,300,400,500,600,700,800,900');
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,600,700&display=swap');
 
 /******* UTILS *******/
 
-@import './utils/variables.scss';
+@import './utils/variables';
+
+/******* LAYOUT *******/
+
+@import './layout/navbar';
 
 /******* BASE *******/
 
 @import './base/general';
 @import './base/spacing';
+@import './base/layout';
+@import './base/flexbox';
+@import './base/grid';
+@import './base/typography';
+@import './base/border';
 
 /******* PAGES *******/
 
 @import './pages/homepage';
 @import './pages/work';
 @import './pages/work-item';
+@import './pages/about';
 
 /******* COMPONENTS *******/
 
@@ -24,3 +33,4 @@
 @import './components/navigation';
 @import './components/footer';
 @import './components/loading';
+@import './components/inputs';

@@ -1,26 +1,26 @@
-<ul class="navbar-nav">
-    <li class="nav-item">
+<ul class="flex-item-xs" [class.navigation-white]="background">
+    <li class="margin-right-xl-xs">
         <a class="nav-link" (click)="closeNav(false)" routerLink="/home" routerLinkActive="active">Home <span class="sr-only">(current)</span></a>
     </li>
-    <li class="nav-item" (click)="closeNav(false)">
+    <li class="margin-right-xl-xs" (click)="closeNav(false)">
         <a class="nav-link" routerLink="/portfolio" routerLinkActive="active">Portfolio</a>
-    </li>
-    <li class="nav-item" (click)="closeNav(false)" *ngIf="authService.user | async">
+    </li>  
+    <li class="margin-right-xl-xs" (click)="closeNav(false)" *ngIf="authService.user | async">
         <a class="nav-link" routerLink="/upload" routerLinkActive="active">Upload</a>
     </li>   
-    <!-- <li class="nav-item" *ngIf="authService.authState === null">
+    <!-- <li class="margin-right-md-xs" *ngIf="authService.authState === null">
         <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
     </li>                    -->
-    <li class="nav-item" (click)="closeNav(false)">
+    <li class="margin-right-xl-xs" (click)="closeNav(false)">
         <a class="nav-link" routerLink="/about">About</a>
     </li>            
-    <li class="nav-item" (click)="closeNav(false)">
+    <li class="margin-right-xl-xs" (click)="closeNav(false)">
         <a class="nav-link" routerLink="/contact">Contact</a>
     </li>
-    <li class="nav-item" (click)="closeNav(false)" *ngIf="authService.user | async">
+    <li class="margin-right-xl-xs" (click)="closeNav(false)" *ngIf="authService.user | async">
         <a class="nav-link" routerLink="/edit" routerLinkActive="active"  href="#">Edit</a>
     </li> 
-    <li class="nav-item" (click)="closeNav(false)" *ngIf="authService.user | async" (click)="logout()">
+    <li class="margin-right-xl-xs" (click)="closeNav(false)" *ngIf="authService.user | async" (click)="logout()">
         <a class="nav-link" routerLink="/login" href="#">Logout</a>
-    </li>                        
+    </li>   
 </ul>

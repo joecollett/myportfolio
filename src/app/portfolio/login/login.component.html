@@ -1,3 +1,5 @@
+<app-header [title]="'Login'" [description]="'Login Page'"></app-header>
+
 <h1 *ngIf="authService.user | async">Welcome {{ (authService.user | async)?.email }}!</h1>
 
 <div *ngIf="!(authService.user | async)">

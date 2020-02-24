@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavComponent } from './navbar/nav/nav.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+
 import { FooterComponent } from './footer/footer.component';
 import { NavFullComponent } from './nav-full/nav-full.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { LinksComponent } from './navbar/links/links.component';
 
 
 
@@ -11,16 +14,18 @@ import { NavbarComponent } from './navbar/navbar.component';
   declarations: [
     NavbarComponent,
     NavFullComponent,
-    NavComponent,
-    FooterComponent       
+    FooterComponent,
+    LinksComponent       
   ],
   imports: [
-    CommonModule 
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule
   ], 
   exports: [
     NavbarComponent,
-    NavFullComponent,
-    NavComponent,
+    NavFullComponent, 
     FooterComponent       
   ]
 })

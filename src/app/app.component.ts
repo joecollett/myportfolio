@@ -1,6 +1,7 @@
-import { Component, Renderer2 } from '@angular/core';
-import { query, trigger, state, animate, transition, style } from '@angular/animations';
+import { Component, Renderer2, OnInit } from '@angular/core';
 import { Router, NavigationStart, NavigationEnd } from '@angular/router';
+import { HostListener,} from '@angular/core';
+import { SharedService } from './shared/services/shared.service';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +9,10 @@ import { Router, NavigationStart, NavigationEnd } from '@angular/router';
   styleUrls: ['./app.component.scss'], 
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
   previousUrl: string;
   loading = true;
-   constructor(private renderer: Renderer2, private router: Router) {
+   constructor(private renderer: Renderer2, private router: Router, public sharedService: SharedService) {
      this.router.events
        .subscribe((event) => {
         if (event instanceof NavigationStart) {
@@ -19,7 +20,7 @@ export class AppComponent {
           if (this.previousUrl) {
             this.renderer.removeClass(document.body, this.previousUrl);
           }
-          let currentUrlSlug = event.url.slice(1)
+          let currentUrlSlug = event.url.slice(1);
           if (currentUrlSlug) {
             this.renderer.addClass(document.body, currentUrlSlug);
             if(currentUrlSlug !== "home"){
@@ -36,6 +37,16 @@ export class AppComponent {
         }        
        });
    }  
+
+  ngOnInit(){
+    this.sharedService.setResize(window.innerWidth);
+  } 
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.sharedService.setResize(window.innerWidth);
+  }   
+
   prepareRouteTransition(outlet) {
     const animation = outlet.activatedRouteData['animation'] || {};
     return animation['value'] || null;
