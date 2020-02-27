@@ -1,0 +1,12 @@
+.main-body {
+    grid-column: 1 / span 12;
+    @media(min-width: $screen-mobile) {
+        grid-column: 1 / span 9;  
+    }
+}
+.side {
+    grid-column: 1 / span 12;
+    @media(min-width: $screen-mobile) {
+        grid-column: 10 / span 3;
+    }    
+}

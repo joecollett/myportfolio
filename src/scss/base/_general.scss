@@ -19,6 +19,12 @@ textarea {
     border-radius: 20px;
     text-transform: uppercase;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+    text-decoration: none;
+    cursor: pointer;
+    &.btn-a {
+        display: block;
+        float:left;
+    }
 }
 .img-responsive {
     width: 100%;

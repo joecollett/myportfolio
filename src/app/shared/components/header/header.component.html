@@ -1,5 +1,5 @@
 <app-navbar [background]="background"></app-navbar>
-<header class="flex-item-xs flex-justify-center-xs flex-direction-column-xs flex-align-items-center-xs" [style.color]="background ? '#ffffff' : ''" [style.background]="background ? 'url(' + background + ')' : ''">
-    <h1 class="margin-bottom-sm-xs text-weight-regular">{{title}}</h1>
-    <p class="margin-top-none-xs text-weight-light text-align-center hidden-xs visible-sm" style="max-width:60vw">{{description}}</p>
+<header [@justFade]="runAnimation3" [ngStyle]="{'visibility': runAnimation3 ? 'visible' : 'hidden'}" class="flex-item-xs flex-justify-center-xs flex-direction-column-xs flex-align-items-center-xs" [style.color]="background ? '#ffffff' : ''" [style.background]="background ? 'url(' + background + ')' : ''">
+    <h1 [@fade]="runAnimation1" [ngStyle]="{'visibility': runAnimation1 ? 'visible' : 'hidden'}" class="margin-bottom-sm-xs text-weight-regular">{{title}}</h1>
+    <p [@fade]="runAnimation2" [ngStyle]="{'visibility': runAnimation2 ? 'visible' : 'hidden'}" class="margin-top-none-xs text-weight-light text-align-center hidden-xs visible-sm" style="max-width:60vw">{{description}}</p>
 </header>

@@ -7,6 +7,7 @@ import { FooterComponent } from './footer/footer.component';
 import { NavFullComponent } from './nav-full/nav-full.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LinksComponent } from './navbar/links/links.component';
+import { SocialMediaComponent } from './footer/social-media/social-media.component';
 
 
 
@@ -15,7 +16,8 @@ import { LinksComponent } from './navbar/links/links.component';
     NavbarComponent,
     NavFullComponent,
     FooterComponent,
-    LinksComponent       
+    LinksComponent,
+    SocialMediaComponent       
   ],
   imports: [
     CommonModule,

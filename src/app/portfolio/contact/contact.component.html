@@ -1,5 +1,5 @@
 <app-header [title]="'Contact'" [description]="'Drop me a message and lets have a chat'"></app-header>
-<div class="grid-columns-12-sm margin-left-xxl-sm margin-right-xxl-sm margin-top-xl-sm margin-bottom-xxl-xs margin-bottom-xxl-sm">
+<div [@fade]="animation" [ngStyle]="{'visibility': animation ? 'visible' : 'hidden'}" class="grid-columns-12-sm margin-left-xxl-sm margin-right-xxl-sm margin-top-xl-sm margin-bottom-xxl-xs margin-bottom-xxl-sm">
   <div class="margin-right-xxl-xs padding-left-lg-xs padding-right-lg-xs" style="grid-column: 2 / span 10;">
     <h2>Send a message</h2>
     <p class="margin-bottom-sm">If you have any projects in mind that you’d be interested in collaborating on, or you have any other queries then don’t hesitate to get in touch by filling out the form below. I look forward to hearing from you.</p>        

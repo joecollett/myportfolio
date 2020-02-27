@@ -1,31 +1,5 @@
-<footer class="flex-item-xs flex-direction-column-xs flex-justify-center-xs flex-align-items-center-xs">
-    <ul>
-      <li>
-        <a href="https://www.facebook.com/joe.collett2" target="_blank">
-          <i class="fab fa-facebook "></i>
-        </a>        
-      </li>
-      <li>
-        <a href="https://twitter.com/joeyc_3" target="_blank">
-          <i class="fab fa-twitter "></i>
-        </a>
-      </li>
-      <li>
-        <a href="https://www.linkedin.com/in/joe-collett-aa69966a/" target="_blank">
-          <i class="fab fa-linkedin "></i>          
-        </a>        
-      </li>
-      <li>
-        <a href="https://www.instagram.com/joeyc_3/" target="_blank">
-          <i class="fab fa-instagram "></i>          
-        </a>          
-      </li>
-      <!-- <li>
-        <a href="#top" class="back-to-top">
-          <i class="fas fa-chevron-up"></i>     
-        </a> 
-      </li>                -->
-    </ul>
+<footer [@fade]="animation" [ngStyle]="{'visibility': animation ? 'visible' : 'hidden'}" class="flex-item-xs flex-direction-column-xs flex-justify-center-xs flex-align-items-center-xs">
+    <app-social-media class="social-media"></app-social-media>
     <a class="margin-top-lg-xs" href="mailto:me@josephcollett.co.uk" target="_blank">me@josephcollett.co.uk</a>
     <div class="flex-item-xs footer-links margin-top-lg-xs">
       <a [routerLink]="'/home'">Home</a>
@@ -34,6 +8,6 @@
       <a [routerLink]="'/contact'">Contact</a>
     </div>
     <p class="margin-top-lg-xs text-align-center">
-        Copyright © 2019 josephcollett.co.uk | Portfolio Website
+        Copyright © 2020 josephcollett.co.uk | Portfolio Website
     </p>
 </footer>

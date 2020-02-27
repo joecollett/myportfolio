@@ -1,5 +1,5 @@
 <app-header [title]="title" [description]="description"></app-header>
-<div class="grid-columns-12-xs margin-bottom-xxl-sm margin-bottom-lg-xs margin-top-lg-xs minus-margin-top-xxxl-sm" style="position: relative; z-index: 1;">
+<div [@fade]="animation" [ngStyle]="{'visibility': animation ? 'visible' : 'hidden'}" class="grid-columns-12-xs margin-bottom-xxl-sm margin-bottom-lg-xs margin-top-lg-xs minus-margin-top-xxxl-sm" style="position: relative; z-index: 1;">
     <div class="grid-columns-12-xs work-container grid-gap-20-xs" style="grid-column: 2 / span 10;">
         <app-work-tile *ngFor="let work of workItems | async | reverse"  class="test" [work]="work"></app-work-tile>
     </div> 

@@ -1,16 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabase } from 'angularfire2/database';
+import { trigger, style, animate, transition } from '@angular/animations';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss']
+  styleUrls: ['./contact.component.scss'],
+  animations: [
+    trigger('fade', [ 
+      transition('false => true', [
+        style({ opacity: 0, visibility: 'visible'}), 
+        animate(300, style({opacity: 1}))
+      ]),        
+    ])
+  ]    
 })
-export class ContactComponent {
+export class ContactComponent implements AfterViewInit {
 
   form: FormGroup;
+  animation = false;
   
     constructor(private fb: FormBuilder, private af: AngularFireDatabase) {
       this.createForm();
@@ -39,5 +49,11 @@ export class ContactComponent {
       this.af.list('/messages').push(formRequest);
       this.form.reset();
     }
+
+    ngAfterViewInit() {
+      setTimeout(() => {
+        this.animation = true;
+      }, 1200);
+    }      
 
 }

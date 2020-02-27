@@ -1,5 +1,5 @@
 <app-header [title]="workDetails.title" [description]="workDetails.desc" [background]="workDetails.image"></app-header>
-<div class="work-item">
+<div class="work-item" [@fade]="animation" [ngStyle]="{'visibility': animation ? 'visible' : 'hidden'}">
   <div class="row row row-no-margin row-margin-lg justify-content-center">
       <div class="col-lg-10 col-md-12">
           <div *ngIf="workDetails?.image">

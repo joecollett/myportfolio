@@ -17,6 +17,7 @@ import { AuthGuard } from '../service/auth-guard.service';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent},
+  { path: 'home', component: HomeComponent},
   { path: 'upload', component: UploadFormComponent, canActivate: [AuthGuard]},    
   { path: 'edit', component: EditComponent, canActivate: [AuthGuard]},
   { path: 'portfolio', component: WorkComponent},

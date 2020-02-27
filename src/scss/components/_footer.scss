@@ -16,6 +16,17 @@ footer {
         justify-content: space-between;
         text-transform: uppercase;
     }
+}
+.social-media {
+    &.nav-footer {
+        display: flex;
+        justify-content: center;
+        ul {
+            height: 22px;
+            bottom: 30px;
+            position: relative;   
+        }     
+    }
     ul {
         display: flex;
         margin:0;
@@ -23,6 +34,7 @@ footer {
         list-style: none;
         width:200px;
         justify-content: space-between;
+        flex-direction: row;
         li {
             background: $primary-color;
             border-radius:50%;
@@ -38,5 +50,5 @@ footer {
                 }
             }
         }
-    }
+    }    
 }

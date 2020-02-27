@@ -11,12 +11,12 @@ import { SharedService } from './shared/services/shared.service';
 
 export class AppComponent implements OnInit {
   previousUrl: string;
-  loading = true;
+  loading = false;
    constructor(private renderer: Renderer2, private router: Router, public sharedService: SharedService) {
      this.router.events
        .subscribe((event) => {
         if (event instanceof NavigationStart) {
-          this.loading = true;
+          this.loading = false;
           if (this.previousUrl) {
             this.renderer.removeClass(document.body, this.previousUrl);
           }
