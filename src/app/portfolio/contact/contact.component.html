@@ -1,0 +1,38 @@
+<app-header [title]="'Contact'" [description]="'Drop me a message and lets have a chat'"></app-header>
+<div [@fade]="animation" [ngStyle]="{'visibility': animation ? 'visible' : 'hidden'}" class="grid-columns-12-sm margin-left-xxl-sm margin-right-xxl-sm margin-top-xl-sm margin-bottom-xxl-xs margin-bottom-xxl-sm">
+  <div class="margin-right-xxl-xs padding-left-lg-xs padding-right-lg-xs" style="grid-column: 2 / span 10;">
+    <h2>Send a message</h2>
+    <p class="margin-bottom-sm">If you have any projects in mind that you’d be interested in collaborating on, or you have any other queries then don’t hesitate to get in touch by filling out the form below. I look forward to hearing from you.</p>        
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group margin-bottom-md-xs">
+        <label for="name">Your name</label>
+        <input type="text" id="name" class="form-control" formControlName="name">
+      </div>
+      <div class="form-group margin-bottom-md-xs">
+        <label for="email">Your email address</label>
+        <input type="text" class="form-control" formControlName="email">
+      </div>
+      <div class="form-group margin-bottom-lg-xs">
+        <label for="Message">Your message</label>
+        <textarea class="form-control" formControlName="message">
+          </textarea>            
+      </div>
+      <button class="btn btn-primary" type="submit" [disabled]="form.invalid">
+          Send            
+      </button>             
+    </form>
+  </div>
+  <!-- <div class="margin-top-md-xs margin-left-xl-xs" style="grid-column: 9 / span 12;">
+    <div>
+      <h3>DETAILS</h3>
+      <p><span class="text-weight-regular">Number:</span> 07504008593</p>
+      <p><span class="text-weight-regular">Email: </span><a href="mailto:me@josephcollett.co.uk">me@josephcollett.co.uk</a></p>
+      <hr>
+    </div>
+    <div class="padding-top-md-xs">
+      <h3>RESOURCES</h3>
+      <p>Below are links to helpful information and resources directly related to me. Feel free to click below to find out more.</p>
+      <button class="btn btn-primary" target="_blank" href="https://firebasestorage.googleapis.com/v0/b/joecollett-c2ff6.appspot.com/o/uploads%2Fcv.pdf?alt=media&token=591f7656-c861-4c05-9f8a-981c2152808c">View CV</button> 
+    </div>   
+  </div> -->
+</div>

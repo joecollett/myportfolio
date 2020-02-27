@@ -1,15 +1,12 @@
-img.workImageMain {
-    position: absolute;
-    right: 0px;
-    left: 0px;
-    bottom: 0px;
-    top: 0px;
-    height: auto;
-    width: 100%;
+.main-body {
+    grid-column: 1 / span 12;
+    @media(min-width: $screen-mobile) {
+        grid-column: 1 / span 9;  
+    }
 }
-.work-item {
-    position: relative;
-    z-index: 1;
-    background: #fff;
-    padding-top:100px;
+.side {
+    grid-column: 1 / span 12;
+    @media(min-width: $screen-mobile) {
+        grid-column: 10 / span 3;
+    }    
 }

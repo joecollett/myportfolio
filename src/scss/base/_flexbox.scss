@@ -1,0 +1,22 @@
+@each $name, $size in $breakpoints {
+    @media(min-width: $size){
+        .flex-item-#{$name} {
+            display:flex;
+        }
+        .flex-justify-center-#{$name} {
+            justify-content: center;
+        }
+        .flex-justify-space-between-#{$name} {
+            justify-content: space-between;
+        }        
+        .flex-align-items-center-#{$name} {
+            align-items: center;
+        }       
+        .flex-direction-column-#{$name} {
+            flex-direction:column;
+        }        
+        .flex-align-self-top-#{$name} {
+            align-self: flex-start;
+        }              
+    }
+}

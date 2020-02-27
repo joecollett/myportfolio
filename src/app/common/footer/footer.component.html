@@ -1,0 +1,13 @@
+<footer [@fade]="animation" [ngStyle]="{'visibility': animation ? 'visible' : 'hidden'}" class="flex-item-xs flex-direction-column-xs flex-justify-center-xs flex-align-items-center-xs">
+    <app-social-media class="social-media"></app-social-media>
+    <a class="margin-top-lg-xs" href="mailto:me@josephcollett.co.uk" target="_blank">me@josephcollett.co.uk</a>
+    <div class="flex-item-xs footer-links margin-top-lg-xs">
+      <a [routerLink]="'/home'">Home</a>
+      <a [routerLink]="'/work'">Work</a>
+      <a [routerLink]="'/about'">About</a>
+      <a [routerLink]="'/contact'">Contact</a>
+    </div>
+    <p class="margin-top-lg-xs text-align-center">
+        Copyright © 2020 josephcollett.co.uk | Portfolio Website
+    </p>
+</footer>

@@ -1,0 +1,45 @@
+body {
+    font-size: 18px;
+    font-family: 'Fira Sans', sans-serif;
+    color:#333333;
+    overflow-x: hidden;
+}
+.navigation {
+    position: absolute;
+    width:100%;
+    z-index: 6;
+    ul {
+        list-style: none;
+        font-size:0.8rem;
+        font-weight:200;
+        display:flex;
+        justify-content: space-between;
+        min-width:400px;
+        text-decoration: none;
+        li {
+            text-decoration: none;
+            a {
+                text-decoration: none;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
+        }
+    }
+}
+
+header {
+    height:30vh;
+    background: $header-color;
+    border-radius: 50% / 100%;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    overflow: hidden;
+    position:relative;
+    border-top:none;
+    overflow: hidden;
+    left:-10%;   
+    width:120%;       
+    @media(min-width: $screen-mobile) {
+        height:60vh;          
+    }    
+}

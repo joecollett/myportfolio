@@ -1,0 +1,22 @@
+<div style="top:20px" class="flex-item-xs flex-justify-space-between-xs flex-align-items-center-xs margin-top-lg-xs navigation">
+    <img *ngIf="!background && !open" class="logo padding-left-md-xs padding-right-md-xs padding-left-xl-md padding-right-xl-md" src="../../../assets//logo-joseph.png" alt="logo">
+    <img *ngIf="background && !open" class="logo padding-left-md-xs padding-right-md-xs padding-left-xl-md padding-right-xl-md" src="../../../assets//logo-joseph-white.png" alt="logo">
+    <app-links [background]="background"></app-links>
+    <div id="nav-icon4" *ngIf="!open" class="mobile-menu" [class.open]="open" (click)="open = !open">
+        <span [class.bg-white]="background"></span>
+        <span [class.bg-white]="background"></span>
+        <span [class.bg-white]="background"></span>
+    </div>
+</div>
+<div class="mobile-background" [@fadeInOut] *ngIf="open">
+    <div style="top:20px" class="flex-item-xs flex-justify-space-between-xs flex-align-items-center-xs margin-top-lg-xs navigation">
+        <img class="logo padding-left-md-xs padding-right-md-xs padding-left-xl-md padding-right-xl-md" src="../../../assets//logo-joseph-white.png" alt="logo">    
+        <div id="nav-icon4" class="mobile-menu" [class.text-white]="open" [class.open]="open" (click)="open = !open">
+            <span class="bg-white"></span>
+            <span class="bg-white"></span>
+            <span class="bg-white"></span>
+        </div>  
+    </div>  
+    <app-links></app-links>
+    <app-social-media class="social-media nav-footer"></app-social-media>
+</div>

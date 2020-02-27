@@ -1,0 +1,16 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="intro padding-left-md-xs padding-right-md-xs padding-left-xl-md padding-right-xl-md">
+        <h1 [@fade]="runAnimation1" [ngStyle]="{'visibility': runAnimation1 ? 'visible' : 'hidden'}">Building Products that Deliver Results.</h1>
+        <p class="margin-bottom-md" *ngIf="!mobileWidth" [@fade]="runAnimation2" [ngStyle]="{'visibility': runAnimation2 ? 'visible' : 'hidden'}">A results-driven and motivated Front End Web Developer with a passion for designing and creating high quality websites.</p>
+        <a routerLink='/portfolio' [@fade]="runAnimation3" [ngStyle]="{'visibility': runAnimation3 ? 'visible' : 'hidden'}" class="btn-primary btn-a">View Latest Work</a>
+    </div>
+    <div class="box flex-item-xs flex-align-items-center-xs flex-justify-center-xs">
+      <img [@justFade]="runAnimation4" [ngStyle]="{'visibility': runAnimation4 ? 'visible' : 'hidden'}" class="home-logo img-responsive" src="../../../assets/logo.png">  
+      <div class="spin-container" [@justFade]="runAnimation5" [ngStyle]="{'visibility': runAnimation5 ? 'visible' : 'hidden'}">
+        <div class="shape">
+          <div class="bd"></div>
+        </div>
+      </div>
+    </div>    
+</div>

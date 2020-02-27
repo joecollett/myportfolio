@@ -1,0 +1,62 @@
+<app-header [title]="'Edit'" [description]="'Edit Content'"></app-header>
+<app-loading-spinner *ngIf="showSpinner"></app-loading-spinner> 
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="add-work" data-toggle="tab" href="#addwork" role="tab" aria-controls="add-work" aria-selected="false">Add Work</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Edit Work</a>
+    </li>
+ </ul>
+<div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <input [(ngModel)]="username" value="{{home.title}}" class="form-control">
+        <input [(ngModel)]="description" value="{{home.description}}" class="form-control">
+        <button (click)="saveValue(username, description)" class="btn btn-primary">Press me</button>
+    </div>
+    <div class="tab-pane fade" id="addwork" role="tabpanel" aria-labelledby="add-work">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Title</label>
+            <input [(ngModel)]="workValue" class="form-control" aria-describedby="title" placeholder="Enter title of work">
+        </div>   
+        <div class="form-group">
+                <label for="exampleInputEmail1">Title Description</label>
+                <input [(ngModel)]="workValueDescription" class="form-control" aria-describedby="title" placeholder="Description under title">
+            </div>          
+        <div class="form-group">
+            <label for="exampleInputEmail1">Caption</label>
+            <input [(ngModel)]="workCaption" class="form-control" aria-describedby="title" placeholder="Enter caption of work">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Primary Colour</label>
+            <input [(ngModel)]="workPrimaryColor" class="form-control" aria-describedby="workPrimaryColor" placeholder="Enter primary colour">
+        </div>                     
+        <div class="form-group">
+            <label for="exampleInputEmail1">Body</label>
+            <ckeditor
+            [(ngModel)]="workBody"
+            [config]="{uiColor: '#99000', allowedContent:true}">
+          </ckeditor>
+        </div>         
+        {{workBody}}      
+        <label>
+            <input type="file" (change)="detectFiles($event)">
+         </label> 
+         <label>
+            <input type="file" (change)="detectCaptionImage($event)">
+         </label>                
+        <button (click)="addWork(workValue, workBody, currentUpload, workCaption, workPrimaryColor, workValueDescription)" [disabled]="!selectedFiles" class="btn btn-primary">Press me (work)</button>
+    </div>
+  {{ckeditorContent}}
+    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+        <ul>
+            <li *ngFor="let workItem of workItems | async" >
+                <a [routerLink]="['/edit/', convertUrl(workItem.id)]">{{workItem.title}}</a>
+                <button (click)="deleteWork(workItem)">Delete</button>
+            </li>  
+        </ul>        
+    </div>
+</div>
