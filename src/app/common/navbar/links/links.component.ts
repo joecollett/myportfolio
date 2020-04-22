@@ -8,6 +8,7 @@ import { AuthService } from './../../../service/auth.service';
 })
 export class LinksComponent implements OnInit {
   @Input() background: string;
+  closeNav;
   constructor(public authService: AuthService) { }
 
   ngOnInit() {

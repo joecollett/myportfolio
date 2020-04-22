@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./work-tile.component.scss']
 })
 export class WorkTileComponent implements OnInit {
-  @Input() work: Object;
+  @Input() work;
   constructor() { }
 
   ngOnInit() {

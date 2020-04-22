@@ -1,5 +1,5 @@
 <div [routerLink]="['/work/', convertUrl(work.id)]" *ngIf="work?.caption" class="work-tile d-flex flex-column flex-md-row">
     <img class="img-responsive work-tile-img filter-brightness-20" [src]="work.captionImg" />
     <h3 class="work-tile-title">{{work.title}}</h3>
-    <div class="work-tile-description" [innerHTML]="work.caption"></div>                    
+    <div class="work-tile-description" [innerHTML]="work?.caption"></div>                    
 </div> 
